@@ -7,6 +7,7 @@
 from gluon.contrib.appconfig import AppConfig
 from gluon.tools import Auth
 
+
 # -------------------------------------------------------------------------
 # This scaffolding model makes your app work on Google App Engine too
 # File is released under public domain and you can use without limitations
@@ -50,6 +51,9 @@ else:
     # session.connect(request, response, db = MEMDB(Client()))
     # ---------------------------------------------------------------------
 
+from gluon.tools import Crud
+crud = Crud(db)
+crud.settings.formstyle='bootstrap4_inline'
 # -------------------------------------------------------------------------
 # by default give a view/generic.extension to all actions from localhost
 # none otherwise. a pattern can be 'controller/function.extension'
@@ -91,7 +95,7 @@ auth = Auth(db, host_names=configuration.get('host.names'))
 # create all tables needed by auth, maybe add a list of extra fields
 # -------------------------------------------------------------------------
 auth.settings.extra_fields['auth_user'] = [Field('numero','string',length=14,label='Numero'),
-                                           Field('img','upload')
+                                           Field('img','upload',label="Foto")
                                           ]
 
 auth.define_tables(username=False, signature=False)
@@ -116,7 +120,7 @@ auth.settings.reset_password_requires_verification = True
 auth.settings.login_next = URL('home')
 auth.settings.logout_next = URL('home')
 auth.settings.profile_next = URL('home')
-
+auth.settings.register_next = URL('registro')
 
 # -------------------------------------------------------------------------  
 # read more at http://dev.w3.org/html5/markup/meta.name.html               

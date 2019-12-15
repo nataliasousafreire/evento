@@ -38,13 +38,12 @@ db.Lote.total.requires = IS_NOT_EMPTY()
 db.Ticket.cli_id.requires = IS_IN_DB(db,"Cliente.usu_id")
 db.Ticket.lot_id.requires = IS_IN_DB(db,"Lote.id")
 
-
 db.Org_Est.org_id.requires = IS_IN_DB(db,"Organizacao.usu_id")
 db.Org_Est.est_id.requires = IS_IN_DB(db,"Estabelecimento.id")
 
-db.Tag.tag.requires = IS_NOT_EMPTY()
+db.Tag.tag.requires = [IS_NOT_EMPTY(),IS_NOT_IN_DB(db,"Tag.tag")]
 
 db.Eve_Tag.eve_id.requires = IS_IN_DB(db,"Evento.id","%(titulo)s")
-db.Eve_Tag.tag.requires = IS_NOT_EMPTY()
+db.Eve_Tag.tag.requires = IS_IN_DB(db,"Tag.tag","%(tag)s")
 
 db.commit()

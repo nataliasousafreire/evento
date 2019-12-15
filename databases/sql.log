@@ -165,3 +165,40 @@ CREATE TABLE "Eve_Tag"(
     "eve_id" INTEGER REFERENCES "Evento" ("id") ON DELETE CASCADE  NOT NULL 
 );
 success!
+DELETE FROM "auth_group";
+DELETE FROM sqlite_sequence WHERE name='auth_group'
+success!
+DELETE FROM "auth_user";
+DELETE FROM sqlite_sequence WHERE name='auth_user'
+success!
+DELETE FROM "Estabelecimento";
+DELETE FROM sqlite_sequence WHERE name='Estabelecimento'
+success!
+DELETE FROM "auth_group";
+DELETE FROM sqlite_sequence WHERE name='auth_group'
+success!
+DELETE FROM "auth_user";
+DELETE FROM sqlite_sequence WHERE name='auth_user'
+success!
+DELETE FROM "Estabelecimento";
+DELETE FROM sqlite_sequence WHERE name='Estabelecimento'
+success!
+DELETE FROM "auth_group";
+DELETE FROM sqlite_sequence WHERE name='auth_group'
+success!
+DELETE FROM "auth_user";
+DELETE FROM sqlite_sequence WHERE name='auth_user'
+success!
+DELETE FROM "Estabelecimento";
+DELETE FROM sqlite_sequence WHERE name='Estabelecimento'
+success!
+DELETE FROM "auth_group";
+DELETE FROM sqlite_sequence WHERE name='auth_group'
+success!
+DELETE FROM "auth_user";
+DELETE FROM sqlite_sequence WHERE name='auth_user'
+success!
+DELETE FROM "Estabelecimento";
+DELETE FROM sqlite_sequence WHERE name='Estabelecimento'
+success!
+success!
