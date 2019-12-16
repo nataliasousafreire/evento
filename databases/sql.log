@@ -1,4 +1,4 @@
-timestamp: 2019-12-14T13:39:04.392000
+timestamp: 2019-12-15T21:06:37.455000
 CREATE TABLE "auth_user"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "first_name" CHAR(128),
@@ -12,21 +12,21 @@ CREATE TABLE "auth_user"(
     "img" CHAR(512)
 );
 success!
-timestamp: 2019-12-14T13:39:05.100000
+timestamp: 2019-12-15T21:06:37.747000
 CREATE TABLE "auth_group"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "role" CHAR(512),
     "description" TEXT
 );
 success!
-timestamp: 2019-12-14T13:39:05.369000
+timestamp: 2019-12-15T21:06:37.956000
 CREATE TABLE "auth_membership"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
     "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  
 );
 success!
-timestamp: 2019-12-14T13:39:05.629000
+timestamp: 2019-12-15T21:06:38.129000
 CREATE TABLE "auth_permission"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  ,
@@ -35,7 +35,7 @@ CREATE TABLE "auth_permission"(
     "record_id" INTEGER
 );
 success!
-timestamp: 2019-12-14T13:39:05.903000
+timestamp: 2019-12-15T21:06:38.301000
 CREATE TABLE "auth_event"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "time_stamp" TIMESTAMP,
@@ -45,7 +45,7 @@ CREATE TABLE "auth_event"(
     "description" TEXT
 );
 success!
-timestamp: 2019-12-14T13:39:06.135000
+timestamp: 2019-12-15T21:06:38.420000
 CREATE TABLE "auth_cas"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
@@ -55,36 +55,35 @@ CREATE TABLE "auth_cas"(
     "renew" CHAR(1)
 );
 success!
-timestamp: 2019-12-14T13:39:06.335000
+timestamp: 2019-12-15T21:06:38.608000
 CREATE TABLE "Cliente"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "usu_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  NOT NULL  UNIQUE,
     "nascimento" DATE NOT NULL,
-    "sexo" CHAR(1),
+    "sexo" CHAR(10),
     "profissao" CHAR(50)
 );
 success!
-timestamp: 2019-12-14T13:39:06.685000
+timestamp: 2019-12-15T21:06:38.979000
 CREATE TABLE "Organizacao"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "usu_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  NOT NULL  UNIQUE,
     "eventos" INTEGER,
     "descricao" TEXT NOT NULL,
-    "site" CHAR(30),
-    "avaliacao" DOUBLE
+    "site" CHAR(30)
 );
 success!
-timestamp: 2019-12-14T13:39:06.869000
+timestamp: 2019-12-15T21:06:39.232000
 CREATE TABLE "Estabelecimento"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "nome" CHAR(30) NOT NULL,
     "cep" CHAR(8) NOT NULL UNIQUE,
     "pais" CHAR(30) NOT NULL,
-    "estado" CHAR(2) NOT NULL,
+    "estado" CHAR(3) NOT NULL,
     "cidade" CHAR(30) NOT NULL
 );
 success!
-timestamp: 2019-12-14T13:39:07.093000
+timestamp: 2019-12-15T21:06:39.455000
 CREATE TABLE "Evento"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "org_id" INTEGER REFERENCES "Organizacao" ("id") ON DELETE CASCADE  NOT NULL ,
@@ -92,7 +91,6 @@ CREATE TABLE "Evento"(
     "img" CHAR(512),
     "titulo" CHAR(50) NOT NULL,
     "descricao" TEXT,
-    "avaliacao" DOUBLE,
     "participantes" INTEGER,
     "is_active" CHAR(1),
     "created_on" TIMESTAMP,
@@ -101,7 +99,7 @@ CREATE TABLE "Evento"(
     "modified_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
 );
 success!
-timestamp: 2019-12-14T13:39:07.253000
+timestamp: 2019-12-15T21:06:39.733000
 CREATE TABLE "Periodo"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "inicio" TIMESTAMP NOT NULL,
@@ -109,7 +107,7 @@ CREATE TABLE "Periodo"(
     "eve_id" INTEGER REFERENCES "Evento" ("id") ON DELETE CASCADE  NOT NULL 
 );
 success!
-timestamp: 2019-12-14T13:39:07.415000
+timestamp: 2019-12-15T21:06:39.881000
 CREATE TABLE "Participacoes"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "cli_id" INTEGER REFERENCES "Cliente" ("id") ON DELETE CASCADE  NOT NULL ,
@@ -118,7 +116,7 @@ CREATE TABLE "Participacoes"(
     "avaliou" CHAR(1)
 );
 success!
-timestamp: 2019-12-14T13:39:07.579000
+timestamp: 2019-12-15T21:07:44.380000
 CREATE TABLE "Lote"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "eve_id" INTEGER REFERENCES "Evento" ("id") ON DELETE CASCADE  NOT NULL ,
@@ -132,21 +130,21 @@ CREATE TABLE "Lote"(
     "modified_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
 );
 success!
-timestamp: 2019-12-14T13:39:07.809000
+timestamp: 2019-12-15T21:07:44.565000
 CREATE TABLE "Ticket"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "cli_id" INTEGER REFERENCES "Cliente" ("id") ON DELETE CASCADE  NOT NULL ,
     "lot_id" INTEGER REFERENCES "Lote" ("id") ON DELETE CASCADE  NOT NULL 
 );
 success!
-timestamp: 2019-12-14T13:39:07.936000
+timestamp: 2019-12-15T21:07:44.738000
 CREATE TABLE "Org_Est"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "org_id" INTEGER REFERENCES "Organizacao" ("id") ON DELETE CASCADE  NOT NULL ,
     "est_id" INTEGER REFERENCES "Estabelecimento" ("id") ON DELETE CASCADE  NOT NULL 
 );
 success!
-timestamp: 2019-12-14T13:39:08.179000
+timestamp: 2019-12-15T21:07:44.875000
 CREATE TABLE "Tag"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "tag" CHAR(30) NOT NULL,
@@ -157,48 +155,11 @@ CREATE TABLE "Tag"(
     "modified_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
 );
 success!
-timestamp: 2019-12-14T13:39:08.405000
+timestamp: 2019-12-15T21:07:45.018000
 CREATE TABLE "Eve_Tag"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "tag_id" INTEGER REFERENCES "Tag" ("id") ON DELETE CASCADE  NOT NULL ,
+    "tag_id" INTEGER REFERENCES "Tag" ("id") ON DELETE CASCADE  ,
     "tag" CHAR(30) NOT NULL,
     "eve_id" INTEGER REFERENCES "Evento" ("id") ON DELETE CASCADE  NOT NULL 
 );
-success!
-DELETE FROM "auth_group";
-DELETE FROM sqlite_sequence WHERE name='auth_group'
-success!
-DELETE FROM "auth_user";
-DELETE FROM sqlite_sequence WHERE name='auth_user'
-success!
-DELETE FROM "Estabelecimento";
-DELETE FROM sqlite_sequence WHERE name='Estabelecimento'
-success!
-DELETE FROM "auth_group";
-DELETE FROM sqlite_sequence WHERE name='auth_group'
-success!
-DELETE FROM "auth_user";
-DELETE FROM sqlite_sequence WHERE name='auth_user'
-success!
-DELETE FROM "Estabelecimento";
-DELETE FROM sqlite_sequence WHERE name='Estabelecimento'
-success!
-DELETE FROM "auth_group";
-DELETE FROM sqlite_sequence WHERE name='auth_group'
-success!
-DELETE FROM "auth_user";
-DELETE FROM sqlite_sequence WHERE name='auth_user'
-success!
-DELETE FROM "Estabelecimento";
-DELETE FROM sqlite_sequence WHERE name='Estabelecimento'
-success!
-DELETE FROM "auth_group";
-DELETE FROM sqlite_sequence WHERE name='auth_group'
-success!
-DELETE FROM "auth_user";
-DELETE FROM sqlite_sequence WHERE name='auth_user'
-success!
-DELETE FROM "Estabelecimento";
-DELETE FROM sqlite_sequence WHERE name='Estabelecimento'
-success!
 success!

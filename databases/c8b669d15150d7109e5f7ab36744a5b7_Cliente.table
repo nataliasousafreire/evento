@@ -89,9 +89,9 @@ p29
 sg8
 I00
 sg9
-I1
+I10
 sg10
-S'CHAR(1)'
+S'CHAR(10)'
 p30
 sg12
 I00

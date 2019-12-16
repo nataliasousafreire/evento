@@ -1,35 +1,18 @@
 # -*- coding: utf-8 -*-
-# -------------------------------------------------------------------------
-# This is a sample controller
-# this file is released under public domain and you can use without limitations
-# -------------------------------------------------------------------------
-# ---- API (example) -----
-
-@auth.requires_login()
-def api_get_user_email():
-    if not request.env.request_method == 'GET': raise HTTP(403)
-    return response.json({'status':'success', 'email':auth.user.email})
-
-# ---- Smart Grid (example) -----
-@auth.requires_membership('admin') # can only be accessed by members of admin groupd
-def grid():
-    response.view = 'generic.html' # use a generic view
-    tablename = request.args(0)
-    if not tablename in db.tables: raise HTTP(403)
-    grid = SQLFORM.smartgrid(db[tablename], args=[tablename], deletable=False, editable=False)
-    return dict(grid=grid)
-
-# ---- Embedded wiki (example) ----
-def wiki():
-    auth.wikimenu() # add the wiki to the menu
-    return auth.wiki() 
-
 def home():
-    response.flash = T("Hello World")
- 
-    form = SQLFORM.grid(db.Evento,create=False,csv=False)
-    msg = "Home de Eventos"
-    return dict(msg=msg,grid=form)
+	response.flash = T("Hello World")
+	db.Evento.id.readable = False
+	db.Evento.created_on.readable = True
+	form = SQLFORM.smartgrid(db.Evento,deletable=False,showbuttontext=False,
+	create=False,csv=False,editable = False, user_signature=False)
+
+	msg = "Home de Eventos"
+	return dict(msg=msg,grid=form)
+
+def show():
+	pit = request.args(0, cast=int, otherwise=URL('home'))
+	form = SQLFORM.smartgrid(db.Event,pid)
+	return dict(grid=form)
 
 @auth.requires_login()
 @auth.requires_membership("Organizacao")
@@ -51,14 +34,14 @@ def show():
     return dict(grid=grid,field_id= "usu_id")	
 
 @auth.requires_login()
-@auth.requires_membership("usuario")
+#@auth.requires_membership("usuario")
 def meus_eventos():
     msg = "Meus Eventos"
 
-    query1 = session.auth.user.id == db.Participacoes.cli_id
-    query2 = db.Evento.id == db.Participacoes.eve_id
-    form = db(query1 and query2 and db.Evento.org_id == db.Organizacao.usu_id).select(db.Evento.titulo,db.Organizacao.usu_id)
-    
+    #query1 = session.auth.user.id == db.Participacoes.cli_id
+    #query2 = db.Evento.id == db.Participacoes.eve_id
+    #form = db(query1 and query2 and db.Evento.org_id == db.Organizacao.usu_id).select(db.Evento.titulo,db.Organizacao.usu_id)
+    form = SQLFORM.grid(db.Evento)
     return dict(msg=msg,rows=form)
 
 
@@ -139,3 +122,23 @@ def cliente():
 
 def intervalo():
     return dict()
+
+
+@auth.requires_login()
+def api_get_user_email():
+    if not request.env.request_method == 'GET': raise HTTP(403)
+    return response.json({'status':'success', 'email':auth.user.email})
+
+# ---- Smart Grid (example) -----
+@auth.requires_membership('admin') # can only be accessed by members of admin groupd
+def grid():
+    response.view = 'generic.html' # use a generic view
+    tablename = request.args(0)
+    if not tablename in db.tables: raise HTTP(403)
+    grid = SQLFORM.smartgrid(db[tablename], args=[tablename], deletable=False, editable=False)
+    return dict(grid=grid)
+
+# ---- Embedded wiki (example) ----
+def wiki():
+    auth.wikimenu() # add the wiki to the menu
+    return auth.wiki() 

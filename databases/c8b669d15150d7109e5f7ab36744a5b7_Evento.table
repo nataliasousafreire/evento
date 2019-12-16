@@ -8,7 +8,7 @@ S'"modified_by"'
 p4
 sS'sortable'
 p5
-I13
+I12
 sS'raw_rname'
 p6
 S'modified_by'
@@ -37,7 +37,7 @@ g3
 S'"participantes"'
 p17
 sg5
-I8
+I7
 sg6
 S'participantes'
 p18
@@ -83,7 +83,7 @@ g3
 S'"is_active"'
 p29
 sg5
-I9
+I8
 sg6
 S'is_active'
 p30
@@ -129,7 +129,7 @@ g3
 S'"created_by"'
 p41
 sg5
-I11
+I10
 sg6
 S'created_by'
 p42
@@ -151,7 +151,7 @@ g3
 S'"created_on"'
 p46
 sg5
-I10
+I9
 sg6
 S'created_on'
 p47
@@ -197,7 +197,7 @@ g3
 S'"modified_on"'
 p58
 sg5
-I12
+I11
 sg6
 S'modified_on'
 p59
@@ -280,27 +280,4 @@ I00
 sg13
 S'reference Estabelecimento'
 p77
-ssS'avaliacao'
-p78
-(dp79
-g3
-S'"avaliacao"'
-p80
-sg5
-I7
-sg6
-S'avaliacao'
-p81
-sg8
-I00
-sg9
-I512
-sg10
-S'DOUBLE'
-p82
-sg12
-I00
-sg13
-S'decimal(3,1)'
-p83
 ss.

@@ -10,8 +10,12 @@ response.menu = [
     (T('Meus Eventos'), False, URL('default', 'meus_eventos'), []),
     (T('Criar Evento'), False, URL('default', 'criar_evento'), []),
     (T('Meus Perfil'), False, URL('default', 'user', 'profile'), []),
-    (T('Relatorio Tags'), False, URL('default', 'tag'), []),
-    (T('Relatorio Clientes'), False, URL('default', 'cliente'), []),
-    (T('Relatorio Intervalos'), False, URL('default', 'intervalo'), [])
+
+    
+    (T('Relatorios'), False, URL(),[
+    	(T('Relatorio Tags'), False, URL('default', 'tag'), []),
+    	(T('Relatorio Clientes'), False, URL('default', 'cliente'), []),
+    	(T('Relatorio Intervalos'), False, URL('default', 'intevalo'), [])
+    	])
 ]
 
