@@ -1,19 +1,27 @@
 {{extend 'layout.html'}}
-
 {{block header}}
-<div class="jumbotron jumbotron-fluid background" style="background-color: #333; color:white; padding:30px;word-wrap:break-word;">
-  <div class="container center">
-    <h1 class="display-5">{{=msg}}</h1>
+<style>
+#texto {
+position: absolute;
+margin-top: 10px;
+}
+</style>
+</br>
+<font size = 7 > <p align = center > {{=B(msg)}}</p>  </font> 
+<div id = "texto">  
+     <img src= "https://i.imgsafe.org/5a/5a3a0084d6.png" />
+</div>
+<div class="row row-no-gutters">  
+  <div id="web2py_user_form" class="col-lg-6" style="background-color:white; margin: 0 auto 5px auto; box-shadow: 0 0 5px #a1a1a1; border-radius:5px;padding: 20px">
+      <h1><p align = "center"> Registrar Cliente </p></h1></br>
+    {{=form1}}
   </div>
 </div>
-
-<!-- CORPO -->
-
-<h1> Cliente <br> </br> </h1>
-
-	{{=form1}}
-<br> </br>
-<h1> Organizacao <br> </br> </h1>
-	{{=form2}}
+</br>
+<div class="row"> 
+  <div id="web2py_user_form" class="col-lg-6" style="background-color:white; margin: 0 auto 5px auto; box-shadow: 0 0 5px #a1a1a1; border-radius:10px;padding: 20px">
+      <h1><p align = "center"> Registrar Organização </p></h1>
+    {{=form2}}
+  </div>
+</div></img>
 {{pass}}
-
