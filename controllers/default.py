@@ -1,17 +1,18 @@
 # -*- coding: utf-8 -*-
+
 def home():
 	response.flash = T("Hello World")
-	db.Evento.id.readable = False
+
 	db.Evento.created_on.readable = True
-	link = ['Tag_Evento','Periodo','Lote']
+	links_t = ['Tag_Evento','Periodo','Lote']
+	links_c = [dict(header='Ingresso', body= lambda row: A("comprar",callback=URL("default","comprar",args=[row.id]),target="_self" ))]
+	
 	form = SQLFORM.smartgrid(db.Evento,deletable=False,showbuttontext=False,
-	linked_tables=link,create=False,csv=False,editable = False, user_signature=False)
+			linked_tables=links_t,links=links_c,create=False,
+			csv=False,editable = False,user_signature=False)
 
 	msg = "Home de Eventos"
 	return dict(msg=msg,grid=form)
-
-def show():
-	return dict()
 
 @auth.requires_login()
 @auth.requires_membership("Organizacao")
@@ -28,27 +29,35 @@ def criar_evento():
 
     return dict(msg=msg,grid=form)
 
-def show():
-    grid = SQLFORM.smartgrid(db.Cliente, linked_tables=['auth_user'])
-    return dict(grid=grid,field_id= "usu_id")	
-
 @auth.requires_login()
-#@auth.requires_membership("usuario")
 def meus_eventos():
 	msg = "Meus Eventos"
 
-	db.Evento.id.readable = False
-	db.Evento.created_on.readable = True
-	query = db.Evento.id == db.Participacao.eve_id and session.auth.user.id == db.Participacao.cli_id
-	form = SQLFORM.grid(query,deletable=False,showbuttontext=False,
-	create=False,csv=False,editable = False, user_signature=False)
+	##usuario ou organizacao
+	usu = db(db.Cliente.usu_id == session.auth.user.id).select()
+	
+	if(usu):
+		db.Participacao.cli_id.writable = db.Participacao.eve_id.writable = False
+		query = db.Evento.id == db.Participacao.eve_id and session.auth.user.id == db.Participacao.cli_id
+		form = SQLFORM.grid(query,deletable=False,create=False,csv=False,user_signature=False)
+	
+	else:
+		db.Evento.created_on.readable = True
+		db.Evento.participantes.writable = False
+		db.Evento.org_id.writable = False
+		org = db(session.auth.user.id == db.Organizacao.usu_id).select()
+		query = db.Evento.org_id ==org[0].id
+		form = SQLFORM.grid(query,deletable=False,create=False,csv=False,user_signature=False)
+
 	
 	return dict(msg=msg,rows=form)
 
 @auth.requires_login()
 @auth.requires_membership("usuario")
 def comprar():
-	return dict()
+	##response.flash = T("Comprar")
+	msg = request.args(0)
+	return dict(msg=msg)
 
 
 # ---- Action for login/register/etc (required for auth) -----
@@ -110,6 +119,31 @@ def registro():
 	msg = "Registro- Cliente ou Organizacao"
 	return dict(msg=msg,form1=form1,form2=form2)
 
+@auth.requires_login()
+@auth.requires_membership("usuario")
+def cliente():
+	pid = session.auth.user.id
+	db.Cliente.id.readable = False
+	db.Cliente.usu_id.writable = False
+
+	form = SQLFORM(db.Cliente,pid)
+	msg = "Cliente"
+	return dict(msg=msg,grid=form.process())
+
+@auth.requires_login()
+@auth.requires_membership("Organizacao")
+def organizacao():
+	pid = session.auth.user.id
+	sel = db(db.Organizacao.usu_id == pid).select(db.Organizacao.id)
+
+	db.Organizacao.id.readable = False
+	db.Organizacao.usu_id.writable = db.Organizacao.eventos.writable = False
+
+	form = SQLFORM(db.Organizacao,sel[0].id)
+
+	msg = "Organizacao"
+	return dict(msg=msg,grid=form.process())
+
 # ---- action to server uploaded static content (required) ---
 @cache.action()
 def download():
@@ -123,8 +157,6 @@ def download():
 def tag():
     return dict()
 
-def cliente():
-    return dict()
 
 def intervalo():
     return dict()

@@ -129,7 +129,7 @@ response.meta.author = configuration.get('app.author')
 response.meta.description = configuration.get('app.description')
 response.meta.keywords = configuration.get('app.keywords')
 response.meta.generator = configuration.get('app.generator')
-response.show_toolbar = False
+response.show_toolbar = True
 
 # -------------------------------------------------------------------------
 # your http://google.com/analytics id                                      

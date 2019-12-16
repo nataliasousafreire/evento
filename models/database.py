@@ -26,12 +26,12 @@ db.define_table("Estabelecimento",
 			   )
 
 db.define_table("Evento",
-				Field("org_id", "reference Organizacao",notnull=True,label="Organizacao"),
+				Field("org_id", "reference Organizacao",notnull=True,label="Organização"),
 				Field("est_id", "reference Estabelecimento",notnull=True,label = "Estabelecimento"),
 				Field("img","upload",label="Imagem"),
 				Field("titulo","string",notnull=True,length = 50,label="Titulo"),
 				Field("descricao","text",length = 1000,label="Descrição"),
-				Field("participantes","integer",default = 0,label= "Total Participantes"),
+				Field("participantes","integer",default = 0,label= "Participantes"),
 				auth.signature,
 				format = "%(titulo)s"
 			   )
@@ -70,14 +70,16 @@ db.define_table("Org_Est",
 db.define_table("Tag",
 				Field("tag","string",notnull=True,length = 30,label="Tag"),
 				auth.signature,
+				format="%(tag)s"
 				)
 
 db.define_table("Tag_Evento",
 				Field("tag_id","reference Tag",length = 30,label="Tag_id"),
 				Field("tag","string",notnull=True,length = 30,label="Tag"),
 				Field("eve_id","reference Evento",notnull=True,label="Evento"),
+				format="%(tag)s"
 			    )
 
-print(db.commit())
-print(db.tables)
+#print(db.commit())
+#print(db.tables)
 
