@@ -28,8 +28,9 @@ db.Periodo.fim.requires = IS_NOT_EMPTY()
 db.Periodo.fim.requires = IS_DATETIME()#format='%yy-%m-%d %H:%M:%S')
 db.Periodo.inicio.requires = IS_DATETIME()#format='%yy-%m-%d %H:%M:%S')
 
-db.Participacoes.cli_id.requires = IS_IN_DB(db,"Cliente.id")
-db.Participacoes.eve_id.requires = IS_IN_DB(db,"Evento.id","%(titulo)s")
+db.Participacao.cli_id.requires = IS_IN_DB(db,"Cliente.id")
+db.Participacao.eve_id.requires = IS_IN_DB(db,"Evento.id","%(titulo)s")
+db.Participacao._plural = "Participacoes"
 
 db.Lote.eve_id.requires = IS_IN_DB(db,"Evento.id","%(titulo)s")
 db.Lote.preco.requires = IS_NOT_EMPTY()
@@ -43,8 +44,8 @@ db.Org_Est.est_id.requires = IS_IN_DB(db,"Estabelecimento.id")
 
 db.Tag.tag.requires = [IS_NOT_EMPTY(),IS_NOT_IN_DB(db,"Tag.tag")]
 
-db.Eve_Tag.eve_id.requires = IS_IN_DB(db,"Evento.id","%(titulo)s")
-db.Eve_Tag.tag_id.requires = [IS_IN_DB(db,"Tag.id"),IS_NOT_IN_DB(db,"Tag.id")]
+db.Tag_Evento.eve_id.requires = IS_IN_DB(db,"Evento.id","%(titulo)s")
+db.Tag_Evento.tag_id.requires = [IS_IN_DB(db,"Tag.id"),IS_NOT_IN_DB(db,"Tag.id")]
 
 
 #auth.enable_record_versioning(db)

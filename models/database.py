@@ -32,7 +32,8 @@ db.define_table("Evento",
 				Field("titulo","string",notnull=True,length = 50,label="Titulo"),
 				Field("descricao","text",length = 1000,label="Descrição"),
 				Field("participantes","integer",default = 0,label= "Total Participantes"),
-				auth.signature,	
+				auth.signature,
+				format = "%(titulo)s"
 			   )
 
 db.define_table("Periodo",
@@ -41,7 +42,7 @@ db.define_table("Periodo",
 				Field("eve_id","reference Evento",notnull=True,label = "Evento"),
 				)
 
-db.define_table("Participacoes",
+db.define_table("Participacao",
 				Field("cli_id","reference Cliente",notnull=True,label = "Usuario"),
 				Field("eve_id","reference Evento",notnull=True,label= "Evento"),
 				Field("avaliacao","decimal(3,1)",default = 0.0,label = "Avaliação"),
@@ -71,7 +72,7 @@ db.define_table("Tag",
 				auth.signature,
 				)
 
-db.define_table("Eve_Tag",
+db.define_table("Tag_Evento",
 				Field("tag_id","reference Tag",length = 30,label="Tag_id"),
 				Field("tag","string",notnull=True,length = 30,label="Tag"),
 				Field("eve_id","reference Evento",notnull=True,label="Evento"),

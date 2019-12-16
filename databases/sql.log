@@ -163,3 +163,28 @@ CREATE TABLE "Eve_Tag"(
     "eve_id" INTEGER REFERENCES "Evento" ("id") ON DELETE CASCADE  NOT NULL 
 );
 success!
+timestamp: 2019-12-16T00:28:16.241000
+CREATE TABLE "Tags_Eventos"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "tag_id" INTEGER REFERENCES "Tag" ("id") ON DELETE CASCADE  ,
+    "tag" CHAR(30) NOT NULL,
+    "eve_id" INTEGER REFERENCES "Evento" ("id") ON DELETE CASCADE  NOT NULL 
+);
+success!
+timestamp: 2019-12-16T00:29:01.486000
+CREATE TABLE "Participacao"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "cli_id" INTEGER REFERENCES "Cliente" ("id") ON DELETE CASCADE  NOT NULL ,
+    "eve_id" INTEGER REFERENCES "Evento" ("id") ON DELETE CASCADE  NOT NULL ,
+    "avaliacao" DOUBLE,
+    "avaliou" CHAR(1)
+);
+success!
+timestamp: 2019-12-16T00:29:01.678000
+CREATE TABLE "Tag_Evento"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "tag_id" INTEGER REFERENCES "Tag" ("id") ON DELETE CASCADE  ,
+    "tag" CHAR(30) NOT NULL,
+    "eve_id" INTEGER REFERENCES "Evento" ("id") ON DELETE CASCADE  NOT NULL 
+);
+success!

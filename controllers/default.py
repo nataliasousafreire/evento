@@ -3,16 +3,15 @@ def home():
 	response.flash = T("Hello World")
 	db.Evento.id.readable = False
 	db.Evento.created_on.readable = True
+	link = ['Tag_Evento','Periodo','Lote']
 	form = SQLFORM.smartgrid(db.Evento,deletable=False,showbuttontext=False,
-	create=False,csv=False,editable = False, user_signature=False)
+	linked_tables=link,create=False,csv=False,editable = False, user_signature=False)
 
 	msg = "Home de Eventos"
 	return dict(msg=msg,grid=form)
 
 def show():
-	pit = request.args(0, cast=int, otherwise=URL('home'))
-	form = SQLFORM.smartgrid(db.Event,pid)
-	return dict(grid=form)
+	return dict()
 
 @auth.requires_login()
 @auth.requires_membership("Organizacao")
@@ -36,13 +35,20 @@ def show():
 @auth.requires_login()
 #@auth.requires_membership("usuario")
 def meus_eventos():
-    msg = "Meus Eventos"
+	msg = "Meus Eventos"
 
-    #query1 = session.auth.user.id == db.Participacoes.cli_id
-    #query2 = db.Evento.id == db.Participacoes.eve_id
-    #form = db(query1 and query2 and db.Evento.org_id == db.Organizacao.usu_id).select(db.Evento.titulo,db.Organizacao.usu_id)
-    form = SQLFORM.grid(db.Evento)
-    return dict(msg=msg,rows=form)
+	db.Evento.id.readable = False
+	db.Evento.created_on.readable = True
+	query = db.Evento.id == db.Participacao.eve_id and session.auth.user.id == db.Participacao.cli_id
+	form = SQLFORM.grid(query,deletable=False,showbuttontext=False,
+	create=False,csv=False,editable = False, user_signature=False)
+	
+	return dict(msg=msg,rows=form)
+
+@auth.requires_login()
+@auth.requires_membership("usuario")
+def comprar():
+	return dict()
 
 
 # ---- Action for login/register/etc (required for auth) -----
