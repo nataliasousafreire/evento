@@ -53,8 +53,6 @@ db.Tag.tag.requires = [IS_NOT_EMPTY(),IS_NOT_IN_DB(db,"Tag.tag")]
 db.Tag.id.readable = False
 
 db.Tag_Evento.eve_id.requires = IS_IN_DB(db,"Evento.id","%(titulo)s")
-db.Tag_Evento.tag_id.requires = [IS_IN_DB(db,"Tag.id"),IS_NOT_IN_DB(db,"Tag_Evento.tag_id")]
-db.Tag_Evento.id.readable = False
-db.Tag_Evento.tag_id.readable = False
+db.Tag_Evento.tag_id.requires = IS_IN_DB(db,"Tag.id","%(tag)s")
+db.Tag_Evento.tag.readable = db.Tag_Evento.tag_id.writeable = False
 
-#auth.enable_record_versioning(db)

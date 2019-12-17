@@ -39,14 +39,14 @@ db.define_table("Evento",
 db.define_table("Periodo",
 				Field("inicio","datetime",notnull=True,label = "Inicio"),
 				Field("fim","datetime",notnull=True,label = "Termino"),
-				Field("eve_id","reference Evento",notnull=True,label = "Evento"),
+				Field("eve_id","reference Evento",notnull=True,label = "Evento")
 				)
 
 db.define_table("Participacao",
 				Field("cli_id","reference Cliente",notnull=True,label = "Usuario"),
 				Field("eve_id","reference Evento",notnull=True,label= "Evento"),
 				Field("avaliacao","decimal(3,1)",default = 0.0,label = "Avaliação"),
-				Field("avaliou","boolean",default=False,label="Avaliou"),
+				Field("avaliou","boolean",default=False,label="Avaliou")
 				)
 
 db.define_table("Lote",
@@ -54,13 +54,13 @@ db.define_table("Lote",
 				Field("preco","double",notnull=True,default = 0.0,label="Preço"),
 				Field("total","integer",notnull=True,label="Total"),
 				Field("quantidade",compute = lambda L: L["total"]),
-				auth.signature,
+				auth.signature
 				)
 
 db.define_table("Ticket",
 				Field("cli_id","reference Cliente",notnull=True,label="Usuario"),
 				Field("lot_id","reference Lote",notnull=True,label ="Lote"),
-				auth.signature,
+				auth.signature
 				)
 
 db.define_table("Org_Est",
@@ -71,16 +71,15 @@ db.define_table("Org_Est",
 db.define_table("Tag",
 				Field("tag","string",notnull=True,length = 30,label="Tag"),
 				auth.signature,
-				format="%(tag)s"
+				format = "%(tag)s"
 				)
 
 db.define_table("Tag_Evento",
-				Field("tag_id","reference Tag",length = 30,label="Tag_id"),
-				Field("tag","string",notnull=True,length = 30,label="Tag"),
+				Field("tag_id","reference Tag",length = 30,label="Tag"),
 				Field("eve_id","reference Evento",notnull=True,label="Evento"),
-				format="%(tag)s"
+				Field("tag")
 			    )
+db.commit()
+auth.enable_record_versioning(db)
 
-#print(db.commit())
-#print(db.tables)
 

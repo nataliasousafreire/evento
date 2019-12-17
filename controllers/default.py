@@ -1,19 +1,5 @@
 # -*- coding: utf-8 -*-
 
-def avaliacao(row):
-	query = db.Participacao.eve_id == row.id 
-	rows = avaliacao = db(query).select(db.Participacao.avaliacao,db.Participacao.avaliou)
-
-	avaliacao = 0
-	for row in rows:
-		if(row.avaliou): 
-			avaliacao += row.avaliacao
-
-	if(len(rows) > 0):
-		avaliacao = avaliacao / len(rows)
-
-	return avaliacao
-
 def home():
 
 	db.Evento.created_on.readable = True
@@ -21,10 +7,8 @@ def home():
 	links_c = [dict(header='Avaliacao', body = avaliacao),
 	dict(header='Ingresso', body= lambda row: A("comprar",callback=URL("default","comprar",args=[row.id]),target="_self" ))]
 			   
-	
 	form = SQLFORM.smartgrid(db.Evento,deletable=False,linked_tables=links_t,
 		   links=links_c,create=False,csv=False,editable = False,user_signature=False)
-
 	return dict(grid=form)
 
 @auth.requires_login()
@@ -36,52 +20,116 @@ def cadastro_evento():
     db.Evento.org_id.writable = False
     form = SQLFORM(db.Evento,buttons=[BUTTON('cadastrar', _type="submit"),
     A("Cadastrar novo Estabelecimento", _class='btn', _href=URL("default", "cadastro_Estabelecimento"))])
-
+    
+    Org = db(db.Organizacao.usu_id == session.auth.user.id).select(db.Organizacao.id).first()
+    form.vars.org_id = Org.id
+    
     if form.process().accepted:
         session.flash = 'Cadastro aceito!'
-        redirect(URL("cadastro_Periodo"))
+        eve_id = db()
+        redirect(URL("cadastro_Periodo",args=[form.vars.id]))
     elif form.errors:
-         response.flash = 'Erros no formulário!'
+        response.flash = 'Erros no formulário!'
     else:
-         response.flash = 'Preencha o formulário!'
+        response.flash = 'Preencha o formulário!'
 
     return dict(msg=msg,grid=form)
 
 @auth.requires_login()
 @auth.requires_membership("Organizacao")
 def cadastro_Estabelecimento():
-    msg = "Criar Eventos"
+    msg = "Cadastrar Estabelecimento"
     form = SQLFORM(db.Estabelecimento)
-
+    
     if form.process().accepted:
+    	print(form.vars.id)
         session.flash = 'Cadastro aceito!'
         redirect(URL("cadastro_evento"))
     elif form.errors:
-         response.flash = 'Erros no formulário!'
+        response.flash = 'Erros no formulário!'
     else:
-         response.flash = 'Preencha o formulário!'
+        response.flash = 'Preencha o formulário!'
 
     return dict(msg=msg,grid=form)
 
 @auth.requires_login()
 @auth.requires_membership("Organizacao")
-def cadastro_evento():
-    msg = "Cadastrar Eventos"
+def cadastro_Periodo():
+    msg = "Cadastrar Periodo"
 
-    db.Evento.participantes.writable = False
-    db.Evento.org_id.writable = False
-    form = SQLFORM(db.Evento,buttons=[BUTTON('cadastrar', _type="submit"),
-    A("Cadastrar novo Estabelecimento", _class='btn', _href=URL("default", "cadastro_Estabelecimento"))])
+    db.Periodo.eve_id.writable = False
+    form = SQLFORM(db.Periodo,buttons=[BUTTON('cadastrar', _type="submit")])
+
+    form.vars.eve_id = request.args(0, cast=int, otherwise=URL('home'))
+    if form.process().accepted:
+        session.flash = 'Cadastro aceito!'
+        redirect(URL("cadastro_Lote",args=[form.vars.eve_id]))
+    elif form.errors:
+        response.flash = 'Erros no formulário!'
+    else:
+        response.flash = 'Preencha o formulário!'
+
+    return dict(msg=msg,grid=form)
+
+@auth.requires_login()
+@auth.requires_membership("Organizacao")
+def cadastro_Lote():
+    msg = "Cadastrar Lote"
+
+    db.Lote.eve_id.writable = False
+    form = SQLFORM(db.Lote,buttons=[BUTTON('cadastrar', _type="submit")])
+
+    form.vars.eve_id = request.args(0, cast=int, otherwise=URL('home'))
+    if form.process().accepted:
+        session.flash = 'Cadastro aceito!'
+        redirect(URL("cadastro_Tags"))
+    elif form.errors:
+        response.flash = 'Erros no formulário!'
+    else:
+        response.flash = 'Preencha o formulário!'
+
+    return dict(msg=msg,grid=form)
+
+@auth.requires_login()
+@auth.requires_membership("Organizacao")
+def cadastro_Tags():
+	msg = "Cadastrar Tags para o Evento"
+
+	db.Tag_Evento.eve_id.writable = db.Tag_Evento.tag.writable = False	
+
+	form = SQLFORM(db.Tag_Evento,buttons=[BUTTON('cadastrar', _type="submit"),
+	A("Criar Tag", _class='btn', _href=URL("criar_Tag")),
+	A("Finalizar", _class='btn', _href=URL("meus_eventos"))])
+
+	Org = db(db.Organizacao.usu_id == session.auth.user.id).select(db.Organizacao.id).first()
+	form.vars.tag = ""
+	form.vars.eve_id = Org.id
+	if form.process().accepted:
+		session.flash = 'Cadastro aceito!'  
+	elif form.errors:
+		response.flash = 'Erros no formulário!'
+	else:
+		response.flash = 'Preencha o formulário!'
+
+	return dict(msg=msg,grid=form)
+
+@auth.requires_login()
+@auth.requires_membership("Organizacao")
+def criar_Tag():
+    msg = "Criar Tag"
+
+    form = SQLFORM(db.Tag)
 
     if form.process().accepted:
         session.flash = 'Cadastro aceito!'
-        redirect(URL("cadastro_Periodo"))
+        redirect(URL("cadastro_Tags"))
     elif form.errors:
-         response.flash = 'Erros no formulário!'
+        response.flash = 'Erros no formulário!'
     else:
-         response.flash = 'Preencha o formulário!'
+        response.flash = 'Preencha o formulário!'
 
     return dict(msg=msg,grid=form)
+
 
 @auth.requires_login()
 def meus_eventos():
@@ -101,14 +149,15 @@ def meus_eventos():
 		db.Evento.org_id.writable = False
 		org = db(session.auth.user.id == db.Organizacao.usu_id).select()
 		query = db.Evento.org_id ==org[0].id
-		form = SQLFORM.grid(query,deletable=False,create=False,csv=False,user_signature=False)
+		links_c = [dict(header='Avaliacao', body = avaliacao)]
+		form = SQLFORM.grid(query,deletable=False,create=False,csv=False,user_signature=False,links=links_c)
 
-	
 	return dict(msg=msg,rows=form)
 
 @auth.requires_login()
 @auth.requires_membership("usuario")
 def comprar():
+
 	form = SQLFORM.factory(Field("CPF"),
 		    Field("Cartao"),Field("Numero"),
 			Field("Senha","password"),table_name = "Compra")
@@ -216,6 +265,34 @@ def organizacao():
 	msg = "Organizacao"
 	return dict(msg=msg,grid=form.process())
 
+
+def avaliacao(row):
+	query = db.Participacao.eve_id == row.id 
+	rows = avaliacao = db(query).select(db.Participacao.avaliacao,db.Participacao.avaliou)
+
+	avaliacao = 0
+	for row in rows:
+		if(row.avaliou): 
+			avaliacao += row.avaliacao
+	if(len(rows) > 0):
+		avaliacao = avaliacao / len(rows)
+	return avaliacao
+
+
+#Relatorios
+def clientes():
+	return dict()
+
+def tag():
+    return dict()
+
+
+def intervalo():
+    return dict()
+
+
+
+
 # ---- action to server uploaded static content (required) ---
 @cache.action()
 def download():
@@ -224,15 +301,6 @@ def download():
     http://..../[app]/default/download/[filename]
     """
     return response.download(request, db)
-
-#Relatorios
-def tag():
-    return dict()
-
-
-def intervalo():
-    return dict()
-
 
 @auth.requires_login()
 def api_get_user_email():

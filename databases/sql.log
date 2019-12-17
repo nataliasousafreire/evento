@@ -199,3 +199,156 @@ ALTER TABLE "Ticket" ADD "created_on" TIMESTAMP;
 timestamp: 2019-12-16T23:39:59.017000
 ALTER TABLE "Ticket" ADD "modified_on" TIMESTAMP;
 success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2019-12-17T11:10:03.122000
+CREATE TABLE "Evento_archive"(
+    "current_record" INTEGER REFERENCES "Evento" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "org_id" INTEGER REFERENCES "Organizacao" ("id") ON DELETE CASCADE  NOT NULL ,
+    "est_id" INTEGER REFERENCES "Estabelecimento" ("id") ON DELETE CASCADE  NOT NULL ,
+    "img" CHAR(512),
+    "titulo" CHAR(50) NOT NULL,
+    "descricao" TEXT,
+    "participantes" INTEGER,
+    "is_active" CHAR(1),
+    "created_on" TIMESTAMP,
+    "created_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "modified_on" TIMESTAMP,
+    "modified_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
+);
+success!
+timestamp: 2019-12-17T11:10:03.386000
+CREATE TABLE "Lote_archive"(
+    "current_record" INTEGER REFERENCES "Lote" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "eve_id" INTEGER REFERENCES "Evento" ("id") ON DELETE CASCADE  NOT NULL ,
+    "preco" DOUBLE NOT NULL DEFAULT 0.0,
+    "total" INTEGER NOT NULL,
+    "quantidade" CHAR(512),
+    "is_active" CHAR(1),
+    "created_on" TIMESTAMP,
+    "created_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "modified_on" TIMESTAMP,
+    "modified_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
+);
+success!
+timestamp: 2019-12-17T11:10:03.610000
+CREATE TABLE "Ticket_archive"(
+    "current_record" INTEGER REFERENCES "Ticket" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "cli_id" INTEGER REFERENCES "Cliente" ("id") ON DELETE CASCADE  NOT NULL ,
+    "lot_id" INTEGER REFERENCES "Lote" ("id") ON DELETE CASCADE  NOT NULL ,
+    "is_active" CHAR(1),
+    "created_on" TIMESTAMP,
+    "created_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "modified_on" TIMESTAMP,
+    "modified_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
+);
+success!
+timestamp: 2019-12-17T11:10:03.930000
+CREATE TABLE "Tag_archive"(
+    "current_record" INTEGER REFERENCES "Tag" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "tag" CHAR(30) NOT NULL,
+    "is_active" CHAR(1),
+    "created_on" TIMESTAMP,
+    "created_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "modified_on" TIMESTAMP,
+    "modified_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!

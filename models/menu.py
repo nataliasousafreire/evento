@@ -18,7 +18,7 @@ response.menu = [
     
     (T('Relatorios'), False, URL(),[
     	(T('Relatorio Tags'), False, URL('default', 'tag'), []),
-    	(T('Relatorio Clientes'), False, URL('default', 'cliente'), []),
+    	(T('Relatorio Clientes'), False, URL('default', 'clientes'), []),
     	(T('Relatorio Intervalos'), False, URL('default', 'intevalo'), [])
     	])
 ]
