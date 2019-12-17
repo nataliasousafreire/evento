@@ -170,7 +170,8 @@ def comprar():
 	if form.process().accepted:
 		session.flash = 'Compra realizada!'
 		eve_id = request.args(0, cast=int, otherwise=URL('home'))
-		pid = db.Participacao.insert(cli_id= session.auth.user.id,eve_id=eve_id)
+		Cli = db(db.Cliente.usu_id == session.auth.user.id).select(db.Cliente.id).first()
+		pid = db.Participacao.insert(cli_id= Cli.id,eve_id=eve_id)
 
 		row = db(db.Evento.id == eve_id).select(db.Evento.id,db.Evento.participantes).first()
 		row.participantes = row.participantes + 1
@@ -285,10 +286,36 @@ def avaliacao(row):
 
 #Relatorios
 def clientes():
-	return dict()
+	form = SQLFORM.factory(Field("Cliente","integer",requires = IS_IN_DB(db,"Cliente.id")))
+	msg = "Relatorios de Cliente"
+	if(form.process().accepted):
+		cli_id = str(form.vars.Cliente)
+		count = db.executesql('SELECT Evento.id, sum( Participacao.avaliacao)/count( Participacao.id) FROM Participacao, Evento WHERE Participacao.cli_id = '+cli_id+' and Participacao.eve_id = Evento.id GROUP BY Evento.id')
+
+		return dict(msg=msg,grid=count) 
+
+	elif form.errors:
+		response.flash = 'Erros no formulário!'
+	else:
+		response.flash = 'Preencha o formulário!'
+
+	return dict(msg=msg,grid = form)
 
 def tag():
-    return dict()
+	form = SQLFORM.factory(Field("tag",requires = IS_IN_DB(db,"Tag.tag","%(tag)s")))
+	
+	msg = "Relatorio Tag"
+	if(form.process().accepted):
+		tag = str(form.vars.tag)
+   		tag = '\''+tag+'\''
+		info = db.executesql('SELECT s.org_id, s.first_name, count( Participacao.cli_id) FROM Participacao, (auth_user inner join (Organizacao inner join (Tag_Evento inner join Evento on Evento.id = Tag_Evento.eve_id) on Organizacao.id = org_id) on auth_user.id = usu_id) as s WHERE Participacao.eve_id = s.eve_id and s.tag = '+tag+' GROUP BY s.org_id;')
+		return dict(msg=msg,grid=info)
+	elif form.errors:
+		response.flash = 'Erros no formulário!'
+	else:
+		response.flash = 'Preencha o formulário!'
+
+	return dict(msg=msg,grid=form)
 
 
 def intervalo():
