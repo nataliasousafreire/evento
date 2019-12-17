@@ -247,7 +247,8 @@ def cliente():
 	db.Cliente.id.readable = False
 	db.Cliente.usu_id.writable = False
 
-	form = SQLFORM(db.Cliente,pid)
+	Cli = db(db.Cliente.usu_id == pid).select(db.Cliente.id).first()
+	form = SQLFORM(db.Cliente,Cli.id)
 	msg = "Cliente"
 	return dict(msg=msg,grid=form.process())
 
@@ -255,12 +256,11 @@ def cliente():
 @auth.requires_membership("Organizacao")
 def organizacao():
 	pid = session.auth.user.id
-	sel = db(db.Organizacao.usu_id == pid).select(db.Organizacao.id)
 
 	db.Organizacao.id.readable = False
 	db.Organizacao.usu_id.writable = db.Organizacao.eventos.writable = False
-
-	form = SQLFORM(db.Organizacao,sel[0].id)
+	Org = db(db.Organizacao.usu_id == pid).select(db.Organizacao.id).first()
+	form = SQLFORM(db.Organizacao,Org.id)
 
 	msg = "Organizacao"
 	return dict(msg=msg,grid=form.process())
