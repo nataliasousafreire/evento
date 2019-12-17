@@ -8,7 +8,7 @@
 response.menu = [
     (T('Home'), False, URL('default', 'home'), []),
     (T('Meus Eventos'), False, URL('default', 'meus_eventos'), []),
-    (T('Criar Evento'), False, URL('default', 'criar_evento'), []),
+    (T('Criar Evento'), False, URL('default', 'cadastro_evento'), []),
     (T('Meus Perfil'), False, URL(), [
     	(T('Usuario'), False, URL('default', 'user', 'profile'), []),
    		(T('Cliete'), False, URL('default', 'cliente'), []),

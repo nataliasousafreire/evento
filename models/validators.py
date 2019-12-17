@@ -4,7 +4,7 @@ db.Cliente.usu_id.requires = [IS_IN_DB(db,"auth_user.id"),IS_NOT_IN_DB(db,"Clien
 db.Cliente.nascimento.requires = IS_NOT_EMPTY()
 db.Cliente.sexo.requires = IS_IN_SET(['Masculino','Feminino','Outro'],zero=None)
 db.Cliente.sexo.widget = SQLFORM.widgets.radio.widget
-db.Cliente.nascimento.requires = IS_DATE(format='%d/%m/%Y')
+db.Cliente.nascimento.requires = IS_DATE()
 
 
 db.Organizacao.usu_id.requires = [IS_IN_DB(db,"auth_user.id"),IS_NOT_IN_DB(db,"Organizacao.id")]
@@ -27,8 +27,8 @@ db.Evento.id.readable = False
 db.Periodo.eve_id.requires = IS_IN_DB(db,"Evento.id","%(titulo)s")
 db.Periodo.inicio.requires = IS_NOT_EMPTY()
 db.Periodo.fim.requires = IS_NOT_EMPTY()
-db.Periodo.fim.requires = IS_DATETIME()#format='%yy-%m-%d %H:%M:%S')
-db.Periodo.inicio.requires = IS_DATETIME()#format='%yy-%m-%d %H:%M:%S')
+db.Periodo.fim.requires = IS_DATETIME()
+db.Periodo.inicio.requires = IS_DATETIME()
 db.Periodo.id.readable = False
 
 db.Participacao.cli_id.requires = IS_IN_DB(db,"Cliente.id")
@@ -56,4 +56,5 @@ db.Tag_Evento.eve_id.requires = IS_IN_DB(db,"Evento.id","%(titulo)s")
 db.Tag_Evento.tag_id.requires = [IS_IN_DB(db,"Tag.id"),IS_NOT_IN_DB(db,"Tag_Evento.tag_id")]
 db.Tag_Evento.id.readable = False
 db.Tag_Evento.tag_id.readable = False
+
 #auth.enable_record_versioning(db)

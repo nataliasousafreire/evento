@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.TypeError'> not all arguments converted during string formatting"
+p3
+sS'layer'
+p4
+S'C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\applications\\evento\\controllers/default.py'
+p5
+sS'code'
+p6
+S'<code object <module> at 0445FB18, file "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\applications\\evento\\controllers/default.py", line 3>'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\restricted.py", line 219, in restricted\n    exec(ccode, environment)\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\applications\\evento\\controllers/default.py", line 201, in <module>\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\globals.py", line 421, in <lambda>\n    self._caller = lambda f: f()\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\tools.py", line 3869, in f\n    return action(*a, **b)\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\tools.py", line 3869, in f\n    return action(*a, **b)\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\applications\\evento\\controllers/default.py", line 77, in comprar\n    form = SQLFORM.factory(*fields)\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\sqlhtml.py", line 2055, in factory\n    return SQLFORM(dummy_dal.define_table(table_name, *fields_with_clones), **attributes)\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\packages\\dal\\pydal\\base.py", line 592, in define_table\n    table = self.lazy_define_table(tablename, *fields, **kwargs)\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\packages\\dal\\pydal\\base.py", line 604, in lazy_define_table\n    table = table_class(self, tablename, *fields, **kwargs)\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\packages\\dal\\pydal\\objects.py", line 326, in __init__\n    field\nTypeError: not all arguments converted during string formatting\n'
+p11
+s.

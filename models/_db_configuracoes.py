@@ -51,9 +51,6 @@ else:
     # session.connect(request, response, db = MEMDB(Client()))
     # ---------------------------------------------------------------------
 
-from gluon.tools import Crud
-crud = Crud(db)
-crud.settings.formstyle='bootstrap4_inline'
 # -------------------------------------------------------------------------
 # by default give a view/generic.extension to all actions from localhost
 # none otherwise. a pattern can be 'controller/function.extension'
@@ -129,7 +126,7 @@ response.meta.author = configuration.get('app.author')
 response.meta.description = configuration.get('app.description')
 response.meta.keywords = configuration.get('app.keywords')
 response.meta.generator = configuration.get('app.generator')
-response.show_toolbar = True
+response.show_toolbar = False
 
 # -------------------------------------------------------------------------
 # your http://google.com/analytics id                                      

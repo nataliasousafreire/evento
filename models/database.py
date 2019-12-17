@@ -60,6 +60,7 @@ db.define_table("Lote",
 db.define_table("Ticket",
 				Field("cli_id","reference Cliente",notnull=True,label="Usuario"),
 				Field("lot_id","reference Lote",notnull=True,label ="Lote"),
+				auth.signature,
 				)
 
 db.define_table("Org_Est",

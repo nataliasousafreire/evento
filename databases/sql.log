@@ -188,3 +188,14 @@ CREATE TABLE "Tag_Evento"(
     "eve_id" INTEGER REFERENCES "Evento" ("id") ON DELETE CASCADE  NOT NULL 
 );
 success!
+timestamp: 2019-12-16T23:39:58.481000
+ALTER TABLE "Ticket" ADD "modified_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ;
+timestamp: 2019-12-16T23:39:58.663000
+ALTER TABLE "Ticket" ADD "is_active" CHAR(1);
+timestamp: 2019-12-16T23:39:58.773000
+ALTER TABLE "Ticket" ADD "created_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ;
+timestamp: 2019-12-16T23:39:58.892000
+ALTER TABLE "Ticket" ADD "created_on" TIMESTAMP;
+timestamp: 2019-12-16T23:39:59.017000
+ALTER TABLE "Ticket" ADD "modified_on" TIMESTAMP;
+success!

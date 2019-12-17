@@ -1,27 +1,81 @@
 # -*- coding: utf-8 -*-
 
+def avaliacao(row):
+	query = db.Participacao.eve_id == row.id 
+	rows = avaliacao = db(query).select(db.Participacao.avaliacao,db.Participacao.avaliou)
+
+	avaliacao = 0
+	for row in rows:
+		if(row.avaliou): 
+			avaliacao += row.avaliacao
+
+	if(len(rows) > 0):
+		avaliacao = avaliacao / len(rows)
+
+	return avaliacao
+
 def home():
-	response.flash = T("Hello World")
 
 	db.Evento.created_on.readable = True
 	links_t = ['Tag_Evento','Periodo','Lote']
-	links_c = [dict(header='Ingresso', body= lambda row: A("comprar",callback=URL("default","comprar",args=[row.id]),target="_self" ))]
+	links_c = [dict(header='Avaliacao', body = avaliacao),
+	dict(header='Ingresso', body= lambda row: A("comprar",callback=URL("default","comprar",args=[row.id]),target="_self" ))]
+			   
 	
-	form = SQLFORM.smartgrid(db.Evento,deletable=False,showbuttontext=False,
-			linked_tables=links_t,links=links_c,create=False,
-			csv=False,editable = False,user_signature=False)
+	form = SQLFORM.smartgrid(db.Evento,deletable=False,linked_tables=links_t,
+		   links=links_c,create=False,csv=False,editable = False,user_signature=False)
 
-	msg = "Home de Eventos"
-	return dict(msg=msg,grid=form)
+	return dict(grid=form)
 
 @auth.requires_login()
 @auth.requires_membership("Organizacao")
-def criar_evento():
-    msg = "Criar Eventos"
-    form = SQLFORM(db.Evento)
+def cadastro_evento():
+    msg = "Cadastrar Eventos"
+
+    db.Evento.participantes.writable = False
+    db.Evento.org_id.writable = False
+    form = SQLFORM(db.Evento,buttons=[BUTTON('cadastrar', _type="submit"),
+    A("Cadastrar novo Estabelecimento", _class='btn', _href=URL("default", "cadastro_Estabelecimento"))])
 
     if form.process().accepted:
         session.flash = 'Cadastro aceito!'
+        redirect(URL("cadastro_Periodo"))
+    elif form.errors:
+         response.flash = 'Erros no formulário!'
+    else:
+         response.flash = 'Preencha o formulário!'
+
+    return dict(msg=msg,grid=form)
+
+@auth.requires_login()
+@auth.requires_membership("Organizacao")
+def cadastro_Estabelecimento():
+    msg = "Criar Eventos"
+    form = SQLFORM(db.Estabelecimento)
+
+    if form.process().accepted:
+        session.flash = 'Cadastro aceito!'
+        redirect(URL("cadastro_evento"))
+    elif form.errors:
+         response.flash = 'Erros no formulário!'
+    else:
+         response.flash = 'Preencha o formulário!'
+
+    return dict(msg=msg,grid=form)
+
+@auth.requires_login()
+@auth.requires_membership("Organizacao")
+def cadastro_evento():
+    msg = "Cadastrar Eventos"
+
+    db.Evento.participantes.writable = False
+    db.Evento.org_id.writable = False
+    form = SQLFORM(db.Evento,buttons=[BUTTON('cadastrar', _type="submit"),
+    A("Cadastrar novo Estabelecimento", _class='btn', _href=URL("default", "cadastro_Estabelecimento"))])
+
+    if form.process().accepted:
+        session.flash = 'Cadastro aceito!'
+        redirect(URL("cadastro_Periodo"))
     elif form.errors:
          response.flash = 'Erros no formulário!'
     else:
@@ -55,9 +109,27 @@ def meus_eventos():
 @auth.requires_login()
 @auth.requires_membership("usuario")
 def comprar():
-	##response.flash = T("Comprar")
-	msg = request.args(0)
-	return dict(msg=msg)
+	form = SQLFORM.factory(Field("CPF"),
+		    Field("Cartao"),Field("Numero"),
+			Field("Senha","password"),table_name = "Compra")
+
+
+	if form.process().accepted:
+		session.flash = 'Compra realizada!'
+		eve_id = request.args(0, cast=int, otherwise=URL('home'))
+		pid = db.Participacao.insert(cli_id= session.auth.user.id,eve_id=eve_id)
+
+		row = db(db.Evento.id == eve_id).select(db.Evento.id,db.Evento.participantes).first()
+		row.participantes = row.participantes + 1
+		row.update_record()
+		redirect(URL("meus_eventos"))
+
+	elif form.errors:
+		response.flash = 'Erros no formulário!'
+	else:
+		response.flash = 'Preencha o formulário!'
+
+	return dict(form=form)
 
 
 # ---- Action for login/register/etc (required for auth) -----
