@@ -14,26 +14,27 @@ def home():
 @auth.requires_login()
 @auth.requires_membership("Organizacao")
 def cadastro_evento():
-    msg = "Cadastrar Eventos"
+	msg = "Cadastrar Eventos"
 
-    db.Evento.participantes.writable = False
-    db.Evento.org_id.writable = False
-    form = SQLFORM(db.Evento,buttons=[BUTTON('cadastrar', _type="submit"),
-    A("Cadastrar novo Estabelecimento", _class='btn', _href=URL("default", "cadastro_Estabelecimento"))])
+	db.Evento.participantes.writable = False
+	db.Evento.org_id.writable = False
+	form = SQLFORM(db.Evento,buttons=[BUTTON('cadastrar', _type="submit"),
+	A("Cadastrar novo Estabelecimento", _class='btn', _href=URL("default", "cadastro_Estabelecimento"))])
     
-    Org = db(db.Organizacao.usu_id == session.auth.user.id).select(db.Organizacao.id).first()
-    form.vars.org_id = Org.id
+	Org = db(db.Organizacao.usu_id == session.auth.user.id).select().first()
+	form.vars.org_id = Org.id
     
-    if form.process().accepted:
-        session.flash = 'Cadastro aceito!'
-        eve_id = db()
-        redirect(URL("cadastro_Periodo",args=[form.vars.id]))
-    elif form.errors:
-        response.flash = 'Erros no formulário!'
-    else:
-        response.flash = 'Preencha o formulário!'
+	if form.process().accepted:
+		session.flash = 'Cadastro aceito!'
+		Org.eventos = Org.eventos + 1
+		Org.update_record()
+		redirect(URL("cadastro_Periodo",args=[form.vars.id]))
+	elif form.errors:
+		response.flash = 'Erros no formulário!'
+	else:
+		response.flash = 'Preencha o formulário!'
 
-    return dict(msg=msg,grid=form)
+	return dict(msg=msg,grid=form)
 
 @auth.requires_login()
 @auth.requires_membership("Organizacao")
