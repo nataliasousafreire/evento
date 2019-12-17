@@ -276,7 +276,7 @@ def avaliacao(row):
 			avaliacao += row.avaliacao
 	if(len(rows) > 0):
 		avaliacao = avaliacao / len(rows)
-	return avaliacao
+	return round(avaliacao, 2)
 
 
 #Relatorios
