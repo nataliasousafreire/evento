@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-
+def index():
+	redirect(URL('evento','default','home'))
+	
 def home():
 
 	db.Evento.created_on.readable = True
@@ -19,7 +21,7 @@ def cadastro_evento():
 	db.Evento.participantes.writable = False
 	db.Evento.org_id.writable = False
 	form = SQLFORM(db.Evento,buttons=[BUTTON('cadastrar', _type="submit"),
-	A("Cadastrar novo Estabelecimento", _class='btn', _href=URL("default", "cadastro_Estabelecimento"))])
+	A("Cadastrar novo Estabelecimento", _class='btn', _href=URL('evento','default', "cadastro_Estabelecimento"))])
     
 	Org = db(db.Organizacao.usu_id == session.auth.user.id).select().first()
 	form.vars.org_id = Org.id
@@ -28,7 +30,7 @@ def cadastro_evento():
 		session.flash = 'Cadastro aceito!'
 		Org.eventos = Org.eventos + 1
 		Org.update_record()
-		redirect(URL("cadastro_Periodo",args=[form.vars.id]))
+		redirect(URL('evento','default',"cadastro_Periodo",args=[form.vars.id]))
 	elif form.errors:
 		response.flash = 'Erros no formulário!'
 	else:
@@ -45,7 +47,7 @@ def cadastro_Estabelecimento():
     if form.process().accepted:
     	print(form.vars.id)
         session.flash = 'Cadastro aceito!'
-        redirect(URL("cadastro_evento"))
+        redirect(URL('evento','default',"cadastro_evento"))
     elif form.errors:
         response.flash = 'Erros no formulário!'
     else:
@@ -64,7 +66,7 @@ def cadastro_Periodo():
     form.vars.eve_id = request.args(0, cast=int, otherwise=URL('home'))
     if form.process().accepted:
         session.flash = 'Cadastro aceito!'
-        redirect(URL("cadastro_Lote",args=[form.vars.eve_id]))
+        redirect(URL('evento','default',"cadastro_Lote",args=[form.vars.eve_id]))
     elif form.errors:
         response.flash = 'Erros no formulário!'
     else:
@@ -83,7 +85,7 @@ def cadastro_Lote():
     form.vars.eve_id = request.args(0, cast=int, otherwise=URL('home'))
     if form.process().accepted:
         session.flash = 'Cadastro aceito!'
-        redirect(URL("cadastro_Tags"))
+        redirect(URL('evento','default',"cadastro_Tags"))
     elif form.errors:
         response.flash = 'Erros no formulário!'
     else:
@@ -99,12 +101,13 @@ def cadastro_Tags():
 	db.Tag_Evento.eve_id.writable = db.Tag_Evento.tag.writable = False	
 
 	form = SQLFORM(db.Tag_Evento,buttons=[BUTTON('cadastrar', _type="submit"),
-	A("Criar Tag", _class='btn', _href=URL("criar_Tag")),
-	A("Finalizar", _class='btn', _href=URL("meus_eventos"))])
+	A("Criar Tag", _class='btn', _href=URL('evento','default',"criar_Tag")),
+	A("Finalizar", _class='btn', _href=URL('evento','default',"meus_eventos"))])
 
 	Org = db(db.Organizacao.usu_id == session.auth.user.id).select(db.Organizacao.id).first()
-	form.vars.tag = ""
+	form.vars.tag = "" #gambiarra
 	form.vars.eve_id = Org.id
+
 	if form.process().accepted:
 		session.flash = 'Cadastro aceito!'  
 	elif form.errors:
@@ -123,7 +126,7 @@ def criar_Tag():
 
     if form.process().accepted:
         session.flash = 'Cadastro aceito!'
-        redirect(URL("cadastro_Tags"))
+        redirect(URL('evento','default',"cadastro_Tags"))
     elif form.errors:
         response.flash = 'Erros no formulário!'
     else:
@@ -172,7 +175,7 @@ def comprar():
 		row = db(db.Evento.id == eve_id).select(db.Evento.id,db.Evento.participantes).first()
 		row.participantes = row.participantes + 1
 		row.update_record()
-		redirect(URL("meus_eventos"))
+		redirect(URL('evento','default',"meus_eventos"))
 
 	elif form.errors:
 		response.flash = 'Erros no formulário!'
@@ -205,7 +208,7 @@ def user():
 def registro():
 	##impede que seja de 2 grupos
 	if  auth.has_membership(2, session.auth.user.id) or auth.has_membership(3, session.auth.user.id):
-		redirect(URL('home'))
+		redirect(URL('evento','default','home'))
 
 	db.Cliente.usu_id.writable = False
 	form1 = SQLFORM(db.Cliente)
@@ -216,7 +219,7 @@ def registro():
 	if form1.process().accepted:
 		session.flash = 'Cadastro aceito!'
 		auth.add_membership(2, session.auth.user.id) #inseri no grupo de usuarios
-		redirect(URL('home'))
+		redirect(URL('evento','default','home'))
 	elif form1.errors:
 		response.flash = 'Erros no formulário!'
 	else:
@@ -232,7 +235,7 @@ def registro():
 	if form2.process().accepted:
 		session.flash = 'Formulário aceito!'
 		auth.add_membership(3, session.auth.user.id) #inseri no grupo de organizacao
-		redirect(URL('home'))
+		redirect(URL('evento','default','home'))
 	elif form2.errors:
 		response.flash = 'Erros no formulário!'
 	else:

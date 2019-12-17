@@ -6,20 +6,20 @@
 # ----------------------------------------------------------------------------------------------------------------------
 
 response.menu = [
-    (T('Home'), False, URL('default', 'home'), []),
-    (T('Meus Eventos'), False, URL('default', 'meus_eventos'), []),
-    (T('Criar Evento'), False, URL('default', 'cadastro_evento'), []),
+    (T('Home'), False, URL('evento','default', 'home'), []),
+    (T('Meus Eventos'), False, URL('evento','default', 'meus_eventos'), []),
+    (T('Criar Evento'), False, URL('evento','default', 'cadastro_evento'), []),
     (T('Meus Perfil'), False, URL(), [
-    	(T('Usuario'), False, URL('default', 'user', 'profile'), []),
-   		(T('Cliete'), False, URL('default', 'cliente'), []),
-   		(T('Organizacao'), False, URL('default', 'organizacao'), [])
+    	(T('Usuario'), False, URL('evento','user', 'profile'), []),
+   		(T('Cliete'), False, URL('evento','default', 'cliente'), []),
+   		(T('Organizacao'), False, URL('evento','default', 'organizacao'), [])
     	]),
 
     
     (T('Relatorios'), False, URL(),[
-    	(T('Relatorio Tags'), False, URL('default', 'tag'), []),
-    	(T('Relatorio Clientes'), False, URL('default', 'clientes'), []),
-    	(T('Relatorio Intervalos'), False, URL('default', 'intevalo'), [])
+    	(T('Relatorio Tags'), False, URL('evento','default', 'tag'), []),
+    	(T('Relatorio Clientes'), False, URL('evento','default', 'clientes'), []),
+    	(T('Relatorio Intervalos'), False, URL('evento','default', 'intervalo'), [])
     	])
 ]
 
