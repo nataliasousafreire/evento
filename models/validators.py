@@ -54,5 +54,4 @@ db.Tag.id.readable = False
 
 db.Tag_Evento.eve_id.requires = IS_IN_DB(db,"Evento.id","%(titulo)s")
 db.Tag_Evento.tag_id.requires = IS_IN_DB(db,"Tag.id","%(tag)s")
-db.Tag_Evento.tag.readable = db.Tag_Evento.tag_id.writeable = False
 

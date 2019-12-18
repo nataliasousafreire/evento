@@ -1,27 +1,54 @@
 # -*- coding: utf-8 -*-
+
 def index():
 	redirect(URL('evento','default','home'))
-	
-def home():
 
+#mostra todos os eventos disponiveis	
+def home():
 	db.Evento.created_on.readable = True
+
+	##liks paras as tabelas relacionadas
 	links_t = ['Tag_Evento','Periodo','Lote']
+
+	#campo extra de avaliacaov - campo virtual
 	links_c = [dict(header='Avaliacao', body = avaliacao),
 	dict(header='Ingresso', body= lambda row: A("comprar",callback=URL("default","comprar",args=[row.id]),target="_self" ))]
 			   
 	form = SQLFORM.smartgrid(db.Evento,deletable=False,linked_tables=links_t,
-		   links=links_c,create=False,csv=False,editable = False,user_signature=False)
+	links=links_c,create=False,csv=False,editable = False,user_signature=False,
+	maxtextlength=10)
+
 	return dict(grid=form)
 
+def procura_tags():
+	response.view = 'default/home.html'
+	
+	form = SQLFORM.factory(Field("tag",requires = IS_IN_DB(db,"Tag.tag","%(tag)s")))
+	
+	if(form.process().accepted):
+		pid = db(db.Tag.tag == form.vars.tag).select().first()
+		
+		links_c = [dict(header='Avaliacao', body = avaliacao),
+		dict(header='Ingresso', body= lambda row: A("comprar",callback=URL("default","comprar",args=[row.id]),target="_self" ))]
+		query = db.Tag_Evento.eve_id == db.Evento.id and db.Tag_Evento.tag_id == pid.id
+
+		form = SQLFORM.grid(query,deletable=False,links=links_c,create=False,csv=False,editable = False)
+		
+	elif form.errors:
+		response.flash = 'Erros no formulário!'
+	else:
+		response.flash = 'Preencha o formulário!'
+
+	return dict(grid=form)
+	
 @auth.requires_login()
 @auth.requires_membership("Organizacao")
 def cadastro_evento():
 	msg = "Cadastrar Eventos"
 
-	db.Evento.participantes.writable = False
-	db.Evento.org_id.writable = False
+	db.Evento.participantes.writable = db.Evento.org_id.writable = False
 	form = SQLFORM(db.Evento,buttons=[BUTTON('cadastrar', _type="submit"),
-	A("Cadastrar novo Estabelecimento", _class='btn', _href=URL('evento','default', "cadastro_Estabelecimento"))])
+	A("Cadastrar Estabelecimento", _class='btn-primary', _href=URL('evento','default', "cadastro_Estabelecimento"))])
     
 	Org = db(db.Organizacao.usu_id == session.auth.user.id).select().first()
 	form.vars.org_id = Org.id
@@ -61,12 +88,12 @@ def cadastro_Periodo():
     msg = "Cadastrar Periodo"
 
     db.Periodo.eve_id.writable = False
-    form = SQLFORM(db.Periodo,buttons=[BUTTON('cadastrar', _type="submit")])
+    form = SQLFORM(db.Periodo,buttons=[BUTTON('cadastrar', _type="submit"),
+	A("Proximo", _class='btn', _href=URL('evento','default',"cadastro_Lote",args=[request.args(0)]))])
 
     form.vars.eve_id = request.args(0, cast=int, otherwise=URL('home'))
     if form.process().accepted:
         session.flash = 'Cadastro aceito!'
-        redirect(URL('evento','default',"cadastro_Lote",args=[form.vars.eve_id]))
     elif form.errors:
         response.flash = 'Erros no formulário!'
     else:
@@ -80,12 +107,13 @@ def cadastro_Lote():
     msg = "Cadastrar Lote"
 
     db.Lote.eve_id.writable = False
-    form = SQLFORM(db.Lote,buttons=[BUTTON('cadastrar', _type="submit")])
+    
+    form = SQLFORM(db.Lote)
 
     form.vars.eve_id = request.args(0, cast=int, otherwise=URL('home'))
     if form.process().accepted:
         session.flash = 'Cadastro aceito!'
-        redirect(URL('evento','default',"cadastro_Tags"))
+        redirect(URL('evento','default',"cadastro_Tags",args=[form.vars.eve_id]))
     elif form.errors:
         response.flash = 'Erros no formulário!'
     else:
@@ -101,12 +129,11 @@ def cadastro_Tags():
 	db.Tag_Evento.eve_id.writable = db.Tag_Evento.tag.writable = False	
 
 	form = SQLFORM(db.Tag_Evento,buttons=[BUTTON('cadastrar', _type="submit"),
-	A("Criar Tag", _class='btn', _href=URL('evento','default',"criar_Tag")),
+	A("Criar Tag", _class='btn', _href=URL('evento','default',"criar_Tag",args=[request.args(0)])),
 	A("Finalizar", _class='btn', _href=URL('evento','default',"meus_eventos"))])
 
-	Org = db(db.Organizacao.usu_id == session.auth.user.id).select(db.Organizacao.id).first()
 	form.vars.tag = "" #gambiarra
-	form.vars.eve_id = Org.id
+	form.vars.eve_id = request.args(0, cast=int, otherwise=URL('home'))
 
 	if form.process().accepted:
 		session.flash = 'Cadastro aceito!'  
@@ -126,7 +153,7 @@ def criar_Tag():
 
     if form.process().accepted:
         session.flash = 'Cadastro aceito!'
-        redirect(URL('evento','default',"cadastro_Tags"))
+        redirect(URL('evento','default',"cadastro_Tags",args=[request.args(0)]))
     elif form.errors:
         response.flash = 'Erros no formulário!'
     else:
@@ -135,6 +162,8 @@ def criar_Tag():
     return dict(msg=msg,grid=form)
 
 
+##mostra os eventos que o usuario comprou
+##ou eventos criados pela organizacao
 @auth.requires_login()
 def meus_eventos():
 	msg = "Meus Eventos"
@@ -149,41 +178,65 @@ def meus_eventos():
 	
 	else:
 		db.Evento.created_on.readable = True
-		db.Evento.participantes.writable = False
-		db.Evento.org_id.writable = False
-		org = db(session.auth.user.id == db.Organizacao.usu_id).select()
-		query = db.Evento.org_id ==org[0].id
-		links_c = [dict(header='Avaliacao', body = avaliacao)]
-		form = SQLFORM.grid(query,deletable=False,create=False,csv=False,user_signature=False,links=links_c)
+		db.Evento.participantes.writable = db.Evento.org_id.writable = False
+
+		org = db(session.auth.user.id == db.Organizacao.usu_id).select().first()
+		query = db.Evento.org_id == org.id 
+
+		links = [dict(header='Avaliacao', body = avaliacao)]
+		form = SQLFORM.grid(query,deletable=False,create=False,csv=False,user_signature=False,links=links)
 
 	return dict(msg=msg,rows=form)
+
+def valida(form):
+	rows = db(db.Participacao).select(db.Participacao.cli_id,db.Participacao.eve_id)
+	lista = rows.as_list()
+	tupla = {"cli_id":form.vars.cli_id,"eve_id":form.vars.eve_id}
+	if(tupla in lista):
+		form.errors.cli_id = "Cliente ja cadastrado" 
 
 @auth.requires_login()
 @auth.requires_membership("usuario")
 def comprar():
+	msg = "Comprar Ticket para Evento"
 
 	form = SQLFORM.factory(Field("CPF"),
 		    Field("Cartao"),Field("Numero"),
-			Field("Senha","password"),table_name = "Compra")
+			Field("Senha","password"),
+			Field("eve_id","integer",writable=False),
+			Field("cli_id","integer",writable=False))
 
+	eve_id = request.args(0, cast=int, otherwise=URL('home'))
+	form.vars.eve_id = eve_id
 
-	if form.process().accepted:
+	Cli = db(db.Cliente.usu_id == session.auth.user.id).select().first()
+	form.vars.cli_id = Cli.id
+
+	if form.process(onvalidation =valida).accepted:
 		session.flash = 'Compra realizada!'
-		eve_id = request.args(0, cast=int, otherwise=URL('home'))
-		Cli = db(db.Cliente.usu_id == session.auth.user.id).select(db.Cliente.id).first()
-		pid = db.Participacao.insert(cli_id= Cli.id,eve_id=eve_id)
+
+		##insere na relacao participacao e atualiza os participantes
+		pid = db.Participacao.insert(cli_id= Cli.id, eve_id= eve_id)
 
 		row = db(db.Evento.id == eve_id).select(db.Evento.id,db.Evento.participantes).first()
 		row.participantes = row.participantes + 1
 		row.update_record()
-		redirect(URL('evento','default',"meus_eventos"))
+
+		#insere na relacao ticket e atualiza o lote
+		Lote = db(db.Lote.eve_id == eve_id and db.Lote.quantidade > 0).select().first()
+		pid = db.Ticket.insert(cli_id=Cli.id,lot_id=Lote.id)
+
+		Lote.quantidade = Lote.quantidade - 1
+		Lote.update_record()
+
+		redirect(URL('evento','default','meus_eventos'))
 
 	elif form.errors:
-		response.flash = 'Erros no formulário!'
+		response.flash = 'Erros no formulário ou Cliente ja possui Cadastro!'
 	else:
 		response.flash = 'Preencha o formulário!'
 
-	return dict(form=form)
+	return dict(msg=msg,form=form)
 
 
 # ---- Action for login/register/etc (required for auth) -----
@@ -317,6 +370,21 @@ def tag():
 
 	return dict(msg=msg,grid=form)
 
+def tag2():
+	form = SQLFORM.factory(Field("tag",requires = IS_IN_DB(db,"Tag.tag","%(tag)s")))
+	
+	msg = "Relatorio Tag"
+	if(form.process().accepted):
+		tag = db(db.Tag.tag == form.vars.tag).select().first()
+		query = db.Evento.id == db.Tag_Evento.eve_id and tag.id == db.Tag_Evento.tag_id
+		rows = db(query).select(db.Tag_Evento.eve_id,db.Tag_Evento.tag_id,db.Evento.participantes,
+		join=db.Evento.on(db.Evento.id == db.Tag_Evento.eve_id),groupby=db.Evento.org_id)
+	
+		return dict(msg=msg,grid=rows)
+	else:
+		response.flash = 'Preencha o formulário!'
+
+	return dict(msg=msg,grid=form)
 
 def intervalo():
     return dict()

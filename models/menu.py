@@ -7,6 +7,7 @@
 
 response.menu = [
     (T('Home'), False, URL('evento','default', 'home'), []),
+    (T('Procurar Tags'), False, URL('evento','default', 'procura_tags'), []),
     (T('Meus Eventos'), False, URL('evento','default', 'meus_eventos'), []),
     (T('Criar Evento'), False, URL('evento','default', 'cadastro_evento'), []),
     (T('Meus Perfil'), False, URL(), [

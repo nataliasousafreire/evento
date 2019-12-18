@@ -53,7 +53,7 @@ db.define_table("Lote",
 				Field("eve_id","reference Evento",notnull=True,label="Evento"),
 				Field("preco","double",notnull=True,default = 0.0,label="Preço"),
 				Field("total","integer",notnull=True,label="Total"),
-				Field("quantidade",compute = lambda L: L["total"]),
+				Field("quantidade","integer",compute = lambda L: L["total"]),
 				auth.signature
 				)
 
@@ -77,8 +77,8 @@ db.define_table("Tag",
 db.define_table("Tag_Evento",
 				Field("tag_id","reference Tag",length = 30,label="Tag"),
 				Field("eve_id","reference Evento",notnull=True,label="Evento"),
-				Field("tag")
-			    )
+				Field("tag","string",notnull=True,length = 30,label="Tag")
+				)
 db.commit()
 auth.enable_record_versioning(db)
 

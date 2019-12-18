@@ -257,3 +257,9 @@ CREATE TABLE "Tag_archive"(
     "modified_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
 );
 success!
+success!
+success!
+success!
+success!
+success!
+success!

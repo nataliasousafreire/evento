@@ -1,0 +1,787 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.AttributeError'> 'Table' object has no attribute 'cliente'"
+p3
+sS'layer'
+p4
+S'C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\applications\\evento\\controllers/default.py'
+p5
+sS'code'
+p6
+S'<code object <module> at 092A20F8, file "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\applications\\evento\\controllers/default.py", line 3>'
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__getslice__'
+p12
+S"<method-wrapper '__getslice__' of exceptions.AttributeError object>"
+p13
+sS'__str__'
+p14
+S"<method-wrapper '__str__' of exceptions.AttributeError object>"
+p15
+sS'__reduce__'
+p16
+S'<built-in method __reduce__ of exceptions.AttributeError object>'
+p17
+sS'__dict__'
+p18
+S'{}'
+p19
+sS'message'
+p20
+S'"\'Table\' object has no attribute \'cliente\'"'
+p21
+sS'__sizeof__'
+p22
+S'<built-in method __sizeof__ of exceptions.AttributeError object>'
+p23
+sS'__init__'
+p24
+S"<method-wrapper '__init__' of exceptions.AttributeError object>"
+p25
+sS'__setattr__'
+p26
+S"<method-wrapper '__setattr__' of exceptions.AttributeError object>"
+p27
+sS'__reduce_ex__'
+p28
+S'<built-in method __reduce_ex__ of exceptions.AttributeError object>'
+p29
+sS'__new__'
+p30
+S'<built-in method __new__ of type object>'
+p31
+sS'__format__'
+p32
+S'<built-in method __format__ of exceptions.AttributeError object>'
+p33
+sS'__class__'
+p34
+S"<type 'exceptions.AttributeError'>"
+p35
+sS'__doc__'
+p36
+S"'Attribute not found.'"
+p37
+sS'__getitem__'
+p38
+S"<method-wrapper '__getitem__' of exceptions.AttributeError object>"
+p39
+sS'__setstate__'
+p40
+S'<built-in method __setstate__ of exceptions.AttributeError object>'
+p41
+sS'__getattribute__'
+p42
+S"<method-wrapper '__getattribute__' of exceptions.AttributeError object>"
+p43
+sS'args'
+p44
+S'("\'Table\' object has no attribute \'cliente\'",)'
+p45
+sS'__subclasshook__'
+p46
+S'<built-in method __subclasshook__ of type object>'
+p47
+sS'__unicode__'
+p48
+S'<built-in method __unicode__ of exceptions.AttributeError object>'
+p49
+sS'__delattr__'
+p50
+S"<method-wrapper '__delattr__' of exceptions.AttributeError object>"
+p51
+sS'__repr__'
+p52
+S"<method-wrapper '__repr__' of exceptions.AttributeError object>"
+p53
+sS'__hash__'
+p54
+S"<method-wrapper '__hash__' of exceptions.AttributeError object>"
+p55
+ssS'evalue'
+p56
+S"'Table' object has no attribute 'cliente'"
+p57
+sS'request'
+p58
+cgluon.html
+XML_unpickle
+p59
+(S's\xacf\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">ajax</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">application</td><td style="vertical-align:top;">:</td><td><div>evento</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">args</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cid</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">controller</td><td style="vertical-align:top;">:</td><td><div>default</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_admin</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-8ebe730c-b8d4-4456-b667-7243fe7783ba<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">samesite</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_evento</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-8763f9c8-6058-4792-932b-1468d1890efa<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">samesite</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">env</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">CONTENT_LENGTH</td><td style="vertical-align:top;">:</td><td><div>681</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">CONTENT_TYPE</td><td style="vertical-align:top;">:</td><td><div>multipart/form-data; boundary=----WebKitFormBoundary7uNAKR4AAtHuGGmO</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_ENCODING</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, br</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_LANGUAGE</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.9,pt;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CACHE_CONTROL</td><td style="vertical-align:top;">:</td><td><div>max-age=0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONNECTION</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONTENT_LENGTH</td><td style="vertical-align:top;">:</td><td><div>681</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONTENT_TYPE</td><td style="vertical-align:top;">:</td><td><div>multipart/form-data; boundary=----WebKitFormBoundary7uNAKR4AAtHuGGmO</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_COOKIE</td><td style="vertical-align:top;">:</td><td><div>session_id_admin=127.0.0.1-8ebe730c-b8d4-4456-b667-7243fe7783ba; session_id_evento=127.0.0.1-8763f9c8-6058-4792-932b-1468d1890efa</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_HOST</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ORIGIN</td><td style="vertical-align:top;">:</td><td><div>http://127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_REFERER</td><td style="vertical-align:top;">:</td><td><div>http://127.0.0.1:8000/comprar/1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_SEC_FETCH_MODE</td><td style="vertical-align:top;">:</td><td><div>navigate</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_SEC_FETCH_SITE</td><td style="vertical-align:top;">:</td><td><div>same-origin</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_SEC_FETCH_USER</td><td style="vertical-align:top;">:</td><td><div>?1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_UPGRADE_INSECURE_REQUESTS</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_USER_AGENT</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">PATH_INFO</td><td style="vertical-align:top;">:</td><td><div>/comprar/1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">QUERY_STRING</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_ADDR</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_PORT</td><td style="vertical-align:top;">:</td><td><div>50678</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_METHOD</td><td style="vertical-align:top;">:</td><td><div>POST</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SCRIPT_NAME</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_NAME</td><td style="vertical-align:top;">:</td><td><div>DESKTOP-COI0HOF</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PORT</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PROTOCOL</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_SOFTWARE</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;C:\\\\Users\\\\Miguel\\\\Documents\\\\4 periodo\\\\IBD\\\\web2py_win\\\\web2py\\\\applications\\\\evento&#x27;, &#x27;C:\\\\Users\\\\Miguel\\\\Documents\\\\4 periodo\\\\IBD\\\\web2py_win\\\\web2py\\\\applications\\\\admin&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x3265760: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;DESKTOP-COI0HOF&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;port&#x27;: 8000, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;C:\\\\Users\\\\Miguel\\\\Documents\\\\4 periodo\\\\IBD\\\\web2py_win\\\\web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;******&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">content_length</td><td style="vertical-align:top;">:</td><td><div>681</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">content_type</td><td style="vertical-align:top;">:</td><td><div>multipart/form-data; boundary=----WebKitFormBoundary7uNAKR4AAtHuGGmO</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_encoding</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, br</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_language</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.9,pt;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cache_control</td><td style="vertical-align:top;">:</td><td><div>max-age=0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_connection</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_content_length</td><td style="vertical-align:top;">:</td><td><div>681</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_content_type</td><td style="vertical-align:top;">:</td><td><div>multipart/form-data; boundary=----WebKitFormBoundary7uNAKR4AAtHuGGmO</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cookie</td><td style="vertical-align:top;">:</td><td><div>session_id_admin=127.0.0.1-8ebe730c-b8d4-4456-b667-7243fe7783ba; session_id_evento=127.0.0.1-8763f9c8-6058-4792-932b-1468d1890efa</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_host</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_origin</td><td style="vertical-align:top;">:</td><td><div>http://127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_referer</td><td style="vertical-align:top;">:</td><td><div>http://127.0.0.1:8000/comprar/1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_sec_fetch_mode</td><td style="vertical-align:top;">:</td><td><div>navigate</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_sec_fetch_site</td><td style="vertical-align:top;">:</td><td><div>same-origin</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_sec_fetch_user</td><td style="vertical-align:top;">:</td><td><div>?1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_upgrade_insecure_requests</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_user_agent</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_py2</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>DESKTOP-COI0HOF</div></td></tr><tr><td><div>fe80::f48b:b57:182d:ed3b%3</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr><tr><td><div>192.168.0.12</div></td></tr><tr><td><div>2804:14d:1487:4254:f48b:b57:182d:ed3b</div></td></tr><tr><td><div>2804:14d:1487:4254:406f:8008:754c:7e0a</div></td></tr><tr><td><div>2804:14d:1487:4254::2</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path_info</td><td style="vertical-align:top;">:</td><td><div>/comprar/1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">query_string</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_addr</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_port</td><td style="vertical-align:top;">:</td><td><div>50678</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_method</td><td style="vertical-align:top;">:</td><td><div>POST</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_uri</td><td style="vertical-align:top;">:</td><td><div>/evento/default/comprar/1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">script_name</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_name</td><td style="vertical-align:top;">:</td><td><div>DESKTOP-COI0HOF</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_port</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_protocol</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_software</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_original_uri</td><td style="vertical-align:top;">:</td><td><div>/comprar/1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_path</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.18.5-stable+timestamp.2019.04.08.04.22.03</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x0208D0D0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x03413AB0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x04530770&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x0208D0D0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x03413AB0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x04530770&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">extension</td><td style="vertical-align:top;">:</td><td><div>html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">folder</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\applications\\evento</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">function</td><td style="vertical-align:top;">:</td><td><div>comprar</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">global_settings</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;C:\\\\Users\\\\Miguel\\\\Documents\\\\4 periodo\\\\IBD\\\\web2py_win\\\\web2py\\\\applications\\\\evento&#x27;, &#x27;C:\\\\Users\\\\Miguel\\\\Documents\\\\4 periodo\\\\IBD\\\\web2py_win\\\\web2py\\\\applications\\\\admin&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x3265760: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;DESKTOP-COI0HOF&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;port&#x27;: 8000, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;C:\\\\Users\\\\Miguel\\\\Documents\\\\4 periodo\\\\IBD\\\\web2py_win\\\\web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;******&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_py2</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>DESKTOP-COI0HOF</div></td></tr><tr><td><div>fe80::f48b:b57:182d:ed3b%3</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr><tr><td><div>192.168.0.12</div></td></tr><tr><td><div>2804:14d:1487:4254:f48b:b57:182d:ed3b</div></td></tr><tr><td><div>2804:14d:1487:4254:406f:8008:754c:7e0a</div></td></tr><tr><td><div>2804:14d:1487:4254::2</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.18.5-stable+timestamp.2019.04.08.04.22.03</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_https</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_local</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_restful</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_scheduler</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_shell</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">method</td><td style="vertical-align:top;">:</td><td><div>POST</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">now</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2019, 12, 18, 10, 2, 24, 877000)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">url</td><td style="vertical-align:top;">:</td><td><div>/comprar/1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">utcnow</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2019, 12, 18, 14, 2, 24, 877000)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi</td><td style="vertical-align:top;">:</td><td><div>&lt;gluon.main.LazyWSGI object at 0x0936BC30&gt;</div></td></tr></table></div>'
+tRp60
+sS'frames'
+p61
+(lp62
+(dp63
+S'file'
+p64
+S'C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\restricted.py'
+p65
+sS'dump'
+p66
+(dp67
+S'environment'
+p68
+S"{'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'pydal.validators.ANY_OF'>, 'ASSIGNJS': <function ASSIGNJS>, 'AppConfig': <function AppConfig>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, ...}"
+p69
+sS'ccode'
+p70
+S'<code object <module> at 092A20F8, file "C:\\User...lications\\evento\\controllers/default.py", line 3>'
+p71
+ssS'lnum'
+p72
+I219
+sS'lines'
+p73
+(dp74
+I214
+S'    if environment is None:'
+p75
+sI215
+S'        environment = {}'
+p76
+sI216
+S"    environment['__file__'] = layer"
+p77
+sI217
+S"    environment['__name__'] = '__restricted__'"
+p78
+sI218
+S'    try:'
+p79
+sI219
+S'        exec(ccode, environment)'
+p80
+sI220
+S'    except HTTP:'
+p81
+sI221
+S'        raise'
+p82
+sI222
+S'    except RestrictedError:'
+p83
+sI223
+S'        # do not encapsulate (obfuscate) the original RestrictedError'
+p84
+ssS'call'
+p85
+S'(ccode=<code object <module> at 092A20F8, file "C:\\User...lications\\evento\\controllers/default.py", line 3>, environment={\'A\': <class \'gluon.html.A\'>, \'ANY_OF\': <class \'pydal.validators.ANY_OF\'>, \'ASSIGNJS\': <function ASSIGNJS>, \'AppConfig\': <function AppConfig>, \'Auth\': <class \'gluon.tools.Auth\'>, \'B\': <class \'gluon.html.B\'>, \'BEAUTIFY\': <class \'gluon.html.BEAUTIFY\'>, \'BODY\': <class \'gluon.html.BODY\'>, \'BR\': <class \'gluon.html.BR\'>, \'BUTTON\': <class \'gluon.html.BUTTON\'>, ...}, layer=r\'C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\applications\\evento\\controllers/default.py\', scode=<code object <module> at 092A20F8, file "C:\\User...lications\\evento\\controllers/default.py", line 3>)'
+p86
+sS'func'
+p87
+S'restricted'
+p88
+sa(dp89
+g64
+S'C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\applications\\evento\\controllers\\default.py'
+p90
+sg66
+(dp91
+sg72
+I403
+sg73
+(dp92
+I393
+S"    response.view = 'generic.html' # use a generic view"
+p93
+sI394
+S'    tablename = request.args(0)'
+p94
+sI395
+S'    if not tablename in db.tables: raise HTTP(403)'
+p95
+sI396
+S'    grid = SQLFORM.smartgrid(db[tablename], args=[tablename], deletable=False, editable=False)'
+p96
+sI397
+S'    return dict(grid=grid)'
+p97
+sI398
+S''
+sI399
+S'# ---- Embedded wiki (example) ----'
+p98
+sI400
+S'def wiki():'
+p99
+sI401
+S'    auth.wikimenu() # add the wiki to the menu'
+p100
+sI402
+S'    return auth.wiki()'
+p101
+ssg85
+S'()'
+p102
+sg87
+S'<module>'
+p103
+sa(dp104
+g64
+S'C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\globals.py'
+p105
+sg66
+(dp106
+S'self'
+p107
+S'undefined'
+p108
+sS'f'
+S'<function comprar>'
+p109
+ssg72
+I421
+sg73
+(dp110
+I416
+S"        self.flash = ''            # used by the default view layout"
+p111
+sI417
+S'        self.meta = Storage()      # used by web2py_ajax.html'
+p112
+sI418
+S'        self.menu = []             # used by the default view layout'
+p113
+sI419
+S'        self.files = []            # used by web2py_ajax.html'
+p114
+sI420
+S'        self._vars = None'
+p115
+sI421
+S'        self._caller = lambda f: f()'
+p116
+sI422
+S'        self._view_environment = None'
+p117
+sI423
+S'        self._custom_commit = None'
+p118
+sI424
+S'        self._custom_rollback = None'
+p119
+sI425
+S"        self.generic_patterns = ['*']"
+p120
+ssg85
+S'(f=<function comprar>)'
+p121
+sg87
+S'<lambda>'
+p122
+sa(dp123
+g64
+S'C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\tools.py'
+p124
+sg66
+(dp125
+S'action'
+p126
+S'<function comprar>'
+p127
+sS'a'
+S'()'
+p128
+sS'b'
+g19
+ssg72
+I3869
+sg73
+(dp129
+I3872
+S'            f.__dict__.update(action.__dict__)'
+p130
+sI3873
+S'            return f'
+p131
+sI3864
+S'                    flag = condition'
+p132
+sI3865
+S'                if not flag:'
+p133
+sI3866
+S'                    current.session.flash = self.messages.access_denied'
+p134
+sI3867
+S'                    return call_or_redirect('
+p135
+sI3868
+S'                        self.settings.on_failed_authorization)'
+p136
+sI3869
+S'                return action(*a, **b)'
+p137
+sI3870
+S'            f.__doc__ = action.__doc__'
+p138
+sI3871
+S'            f.__name__ = action.__name__'
+p139
+ssg85
+S'(*a=(), **b={})'
+p140
+sg87
+S'f'
+sa(dp141
+g64
+S'C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\tools.py'
+p142
+sg66
+(dp143
+S'action'
+p144
+S'<function comprar>'
+p145
+sS'a'
+S'()'
+p146
+sS'b'
+g19
+ssg72
+I3869
+sg73
+(dp147
+I3872
+S'            f.__dict__.update(action.__dict__)'
+p148
+sI3873
+S'            return f'
+p149
+sI3864
+S'                    flag = condition'
+p150
+sI3865
+S'                if not flag:'
+p151
+sI3866
+S'                    current.session.flash = self.messages.access_denied'
+p152
+sI3867
+S'                    return call_or_redirect('
+p153
+sI3868
+S'                        self.settings.on_failed_authorization)'
+p154
+sI3869
+S'                return action(*a, **b)'
+p155
+sI3870
+S'            f.__doc__ = action.__doc__'
+p156
+sI3871
+S'            f.__name__ = action.__name__'
+p157
+ssg85
+S'(*a=(), **b={})'
+p158
+sg87
+S'f'
+sa(dp159
+g64
+S'C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\applications\\evento\\controllers\\default.py'
+p160
+sg66
+(dp161
+S'global db'
+p162
+S'<DAL uri="sqlite://storage.sqlite">'
+p163
+sS'db.teste'
+p164
+g108
+ssg72
+I210
+sg73
+(dp165
+I205
+S''
+sI206
+S"\tform.vars.eve_id = request.args(0, cast=int, otherwise=URL('home'))"
+p166
+sI207
+S'\tCli = db(db.Cliente.usu_id == session.auth.user.id).select().first()'
+p167
+sI208
+S'\tform.vars.cli_id = Cli.id'
+p168
+sI209
+S''
+sI210
+S'\tif form.process(onvalidation =valida).accepted:'
+p169
+sI211
+S'\t\tprint(db.CLientessss)'
+p170
+sI212
+S"\t\tsession.flash = 'Compra realizada!'"
+p171
+sI213
+S'\t\t##insere na relacao participacao e atualiza os participantes'
+p172
+sI214
+S'\t\tCli = db(db.Cliente.usu_id == session.auth.user.id).select().first()'
+p173
+ssg85
+S'()'
+p174
+sg87
+S'comprar'
+p175
+sa(dp176
+g64
+S'C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\html.py'
+p177
+sg66
+(dp178
+S'self'
+p179
+S'<gluon.sqlhtml.SQLFORM object>'
+p180
+sS'self.validate'
+p181
+S'<bound method SQLFORM.validate of <gluon.sqlhtml.SQLFORM object>>'
+p182
+sS'kwargs'
+p183
+S"{'dbio': True, 'onvalidation': <function valida>}"
+p184
+ssg72
+I2326
+sg73
+(dp185
+I2321
+S'                return dict(form=SQLFORM(db.table).process(onsuccess=my_callback)'
+p186
+sI2322
+S''
+sI2323
+S''
+sI2324
+S'        """'
+p187
+sI2325
+S"        kwargs['dbio'] = kwargs.get('dbio', True)  # necessary for SQLHTML forms"
+p188
+sI2326
+S'        self.validate(**kwargs)'
+p189
+sI2327
+S'        return self'
+p190
+sI2328
+S''
+sI2329
+S'    REDIRECT_JS = "window.location=\'%s\';return false"'
+p191
+sI2330
+S''
+ssg85
+S"(self=<gluon.sqlhtml.SQLFORM object>, **kwargs={'dbio': True, 'onvalidation': <function valida>})"
+p192
+sg87
+S'process'
+p193
+sa(dp194
+g64
+S'C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\html.py'
+p195
+sg66
+(dp196
+S'self'
+p197
+S'<gluon.sqlhtml.SQLFORM object>'
+p198
+sS'self.accepts'
+p199
+S'<bound method SQLFORM.accepts of <gluon.sqlhtml.SQLFORM object>>'
+p200
+sS'kwargs'
+p201
+S"{'dbio': True, 'onvalidation': <function valida>, 'request_vars': <Storage {'CPF': '70466027273', 'Cartao': 'maste...1-e4bfb1ba000c', '_formname': 'no_table/create'}>, 'session': <Storage {'_formkey[no_table/create]': ['56df518...c7302', '2fc6c1cd-9a13-48b5-a0e2-c74964c8559a']}>}"
+p202
+ssg72
+I2264
+sg73
+(dp203
+I2259
+S"        for key in ('message_onsuccess', 'message_onfailure', 'onsuccess',"
+p204
+sI2260
+S"                    'onfailure', 'next', 'message_onchange', 'onchange'):"
+p205
+sI2261
+S'            if key in kwargs:'
+p206
+sI2262
+S'                del kwargs[key]'
+p207
+sI2263
+S''
+sI2264
+S'        if self.accepts(**kwargs):'
+p208
+sI2265
+S"            if onsuccess == 'flash':"
+p209
+sI2266
+S'                if next:'
+p210
+sI2267
+S'                    current.session.flash = message_onsuccess'
+p211
+sI2268
+S'                else:'
+p212
+ssg85
+S"(self=<gluon.sqlhtml.SQLFORM object>, **kwargs={'dbio': True, 'onvalidation': <function valida>, 'request_vars': <Storage {'CPF': '70466027273', 'Cartao': 'maste...1-e4bfb1ba000c', '_formname': 'no_table/create'}>, 'session': <Storage {'_formkey[no_table/create]': ['56df518...c7302', '2fc6c1cd-9a13-48b5-a0e2-c74964c8559a']}>})"
+p213
+sg87
+S'validate'
+p214
+sa(dp215
+g64
+S'C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\sqlhtml.py'
+p216
+sg66
+(dp217
+S'kwargs'
+p218
+g19
+ssg72
+I1785
+sg73
+(dp219
+I1780
+S'            session,'
+p220
+sI1781
+S'            formname,'
+p221
+sI1782
+S'            keepvalues,'
+p222
+sI1783
+S'            onvalidation,'
+p223
+sI1784
+S'            hideerror=hideerror,'
+p224
+sI1785
+S'            **kwargs'
+p225
+sI1786
+S'        )'
+p226
+sI1787
+S''
+sI1788
+S'        self.deleted = request_vars.get(self.FIELDNAME_REQUEST_DELETE, False)'
+p227
+sI1789
+S''
+ssg85
+S"(self=<gluon.sqlhtml.SQLFORM object>, request_vars=<Storage {'CPF': '70466027273', 'Cartao': 'maste...1-e4bfb1ba000c', '_formname': 'no_table/create'}>, session=<Storage {'_formkey[no_table/create]': ['56df518...c7302', '2fc6c1cd-9a13-48b5-a0e2-c74964c8559a']}>, formname='no_table/create', keepvalues=False, onvalidation=<function valida>, dbio=True, hideerror=False, detect_record_change=False, **kwargs={})"
+p228
+sg87
+S'accepts'
+p229
+sa(dp230
+g64
+S'C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\html.py'
+p231
+sg66
+(dp232
+S'global call_as_list'
+p233
+S'<function call_as_list>'
+p234
+sS'self'
+p235
+S'<gluon.sqlhtml.SQLFORM object>'
+p236
+sS'onvalidation'
+p237
+S'<function valida>'
+p238
+ssg72
+I2168
+sg73
+(dp239
+I2163
+S'                if changed:'
+p240
+sI2164
+S'                    if onchange and self.record_changed and \\'
+p241
+sI2165
+S'                            self.detect_record_change:'
+p242
+sI2166
+S'                        call_as_list(onchange, self)'
+p243
+sI2167
+S'            elif status:'
+p244
+sI2168
+S'                call_as_list(onvalidation, self)'
+p245
+sI2169
+S'        if self.errors:'
+p246
+sI2170
+S'            status = False'
+p247
+sI2171
+S'        if session is not None:'
+p248
+sI2172
+S"            if hasattr(self, 'record_hash'):"
+p249
+ssg85
+S"(self=<gluon.sqlhtml.SQLFORM object>, request_vars=<Storage {'Cartao': 'master', 'Numero': '1234567...mname': 'no_table/create', 'CPF': '70466027273'}>, session=<Storage {'_formkey[no_table/create]': ['56df518...c7302', '2fc6c1cd-9a13-48b5-a0e2-c74964c8559a']}>, formname='no_table/create', keepvalues=False, onvalidation=<function valida>, hideerror=False, **kwargs={})"
+p250
+sg87
+g229
+sa(dp251
+g64
+S'C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\html.py'
+p252
+sg66
+(dp253
+S'a'
+S'(<gluon.sqlhtml.SQLFORM object>,)'
+p254
+sS'item'
+p255
+S'<function valida>'
+p256
+sS'b'
+g19
+ssg72
+I165
+sg73
+(dp257
+I160
+S''
+sI161
+S'def call_as_list(f, *a, **b):'
+p258
+sI162
+S'    if not isinstance(f, (list, tuple)):'
+p259
+sI163
+S'        f = [f]'
+p260
+sI164
+S'    for item in f:'
+p261
+sI165
+S'        item(*a, **b)'
+p262
+sI166
+S''
+sI167
+S''
+sI168
+S"def truncate_string(text, length, dots='...'):"
+p263
+sI169
+S'    text = to_unicode(text)'
+p264
+ssg85
+S'(f=[<function valida>], *a=(<gluon.sqlhtml.SQLFORM object>,), **b={})'
+p265
+sg87
+S'call_as_list'
+p266
+sa(dp267
+g64
+S'C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\applications\\evento\\controllers\\default.py'
+p268
+sg66
+(dp269
+S'rows'
+p270
+g108
+sS'lista'
+p271
+g108
+ssg72
+I190
+sg73
+(dp272
+I192
+S''
+sI193
+S'\tprint (lista)'
+p273
+sI194
+S''
+sI185
+S''
+sI186
+S'\treturn dict(msg=msg,rows=form)'
+p274
+sI187
+S''
+sI188
+S'def valida(form):'
+p275
+sI189
+S'\tprint("ini")'
+p276
+sI190
+S'\trows = db(db.Participacao).select(db.Participacao.cliente,db.Participacao.eve_id)'
+p277
+sI191
+S'\tlista = rows.as_list()'
+p278
+ssg85
+S'(form=<gluon.sqlhtml.SQLFORM object>)'
+p279
+sg87
+S'valida'
+p280
+sasS'pyver'
+p281
+S'Python 2.7.9: C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\web2py.exe (prefix: )'
+p282
+sS'session'
+p283
+g59
+(S'sn\n\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">auth</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">expiration</td><td style="vertical-align:top;">:</td><td><div>3600</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">hmac_key</td><td style="vertical-align:top;">:</td><td><div>8e8b2dd2-0410-4eb0-972f-fba28a381c36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_visit</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2019, 12, 18, 10, 0, 6, 724000)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remember_me</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">email</td><td style="vertical-align:top;">:</td><td><div>email@gmail.com</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">first_name</td><td style="vertical-align:top;">:</td><td><div>Miguel</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">id</td><td style="vertical-align:top;">:</td><td><div>1L</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">img</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_name</td><td style="vertical-align:top;">:</td><td><div>Castro</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">numero</td><td style="vertical-align:top;">:</td><td><div>99999999999</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_id</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_key</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">reset_password_key</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user_groups</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">2</td><td style="vertical-align:top;">:</td><td><div>usuario</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">4</td><td style="vertical-align:top;">:</td><td><div>user_1</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr></table></div>'
+tRp284
+sS'etype'
+p285
+S"<type 'exceptions.AttributeError'>"
+p286
+sS'date'
+p287
+S'Wed Dec 18 10:02:30 2019'
+p288
+sS'response'
+p289
+g59
+(S's1%\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">body</td><td style="vertical-align:top;">:</td><td><div>&lt;cStringIO.StringO object at 0x0936BC00&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_evento</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-8763f9c8-6058-4792-932b-1468d1890efa<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">samesite</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">delimiters</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">files</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">form_label_separator</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">formstyle</td><td style="vertical-align:top;">:</td><td><div>bootstrap4_inline</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generic_patterns</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>*</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">google_analytics_id</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">headers</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">X-Powered-By</td><td style="vertical-align:top;">:</td><td><div>web2py</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">menu</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div><table><tr><td><div>Home</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Procurar Tags</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/procura_tags</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Meus Eventos</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/meus_eventos</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Criar Evento</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/cadastro_evento</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Meus Perfil</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/comprar</div></td></tr><tr><td><div><table><tr><td><div><table><tr><td><div>Usuario</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/user/profile</div></td></tr><tr><td><div>[]</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Cliete</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/cliente</div></td></tr><tr><td><div>[]</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Organizacao</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/organizacao</div></td></tr><tr><td><div>[]</div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Relatorios</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/comprar</div></td></tr><tr><td><div><table><tr><td><div><table><tr><td><div>Relatorio Tags</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/tag</div></td></tr><tr><td><div>[]</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Relatorio Clientes</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/clientes</div></td></tr><tr><td><div>[]</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Relatorio Intervalos</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/intervalo</div></td></tr><tr><td><div>[]</div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">meta</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">author</td><td style="vertical-align:top;">:</td><td><div>Your Name &lt;you@example.com&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">description</td><td style="vertical-align:top;">:</td><td><div>a cool new app</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generator</td><td style="vertical-align:top;">:</td><td><div>Web2py Web Framework</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">keywords</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>web2py</div></td></tr><tr><td><div>python</div></td></tr><tr><td><div>framework</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">models_to_run</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>^\\w+\\.py$</div></td></tr><tr><td><div>^default/\\w+\\.py$</div></td></tr><tr><td><div>^default/comprar/\\w+\\.py$</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">postprocessing</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_compression_level</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_expires</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_data_name</td><td style="vertical-align:top;">:</td><td><div>session_data_evento</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_file</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;C:\\\\Users\\\\Miguel\\\\Documents\\\\4 periodo\\\\IBD\\\\web2py_win\\\\web2py\\\\applications\\\\evento\\\\sessions\\\\0cf\\\\0f2\\\\127.0.0.1-8763f9c8-6058-4792-932b-1468d1890efa&#x27;, mode &#x27;rb+&#x27; at 0x03E67C80&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_filename</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\applications\\evento\\sessions\\127.0.0.1-8763f9c8-6058-4792-932b-1468d1890efa</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_hash</td><td style="vertical-align:top;">:</td><td><div>cc305e8495cd7b52efb82f4de1a4a55c</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-8763f9c8-6058-4792-932b-1468d1890efa</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_name</td><td style="vertical-align:top;">:</td><td><div>session_id_evento</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_locked</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_masterapp</td><td style="vertical-align:top;">:</td><td><div>evento</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_new</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_storage_type</td><td style="vertical-align:top;">:</td><td><div>file</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">show_toolbar</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">status</td><td style="vertical-align:top;">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">view</td><td style="vertical-align:top;">:</td><td><div>default/comprar.html</div></td></tr></table></div>'
+tRp290
+sS'locals'
+p291
+(dp292
+S'form'
+p293
+S'<gluon.sqlhtml.SQLFORM object>'
+p294
+sssS'traceback'
+p295
+S'Traceback (most recent call last):\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\restricted.py", line 219, in restricted\n    exec(ccode, environment)\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\applications\\evento\\controllers/default.py", line 403, in <module>\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\globals.py", line 421, in <lambda>\n    self._caller = lambda f: f()\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\tools.py", line 3869, in f\n    return action(*a, **b)\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\tools.py", line 3869, in f\n    return action(*a, **b)\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\applications\\evento\\controllers/default.py", line 210, in comprar\n    if form.process(onvalidation =valida).accepted:\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\html.py", line 2326, in process\n    self.validate(**kwargs)\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\html.py", line 2264, in validate\n    if self.accepts(**kwargs):\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\sqlhtml.py", line 1785, in accepts\n    **kwargs\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\html.py", line 2168, in accepts\n    call_as_list(onvalidation, self)\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\gluon\\html.py", line 165, in call_as_list\n    item(*a, **b)\n  File "C:\\Users\\Miguel\\Documents\\4 periodo\\IBD\\web2py_win\\web2py\\applications\\evento\\controllers/default.py", line 190, in valida\n    rows = db(db.Participacao).select(db.Participacao.cliente,db.Participacao.eve_id)\nAttributeError: \'Table\' object has no attribute \'cliente\'\n'
+p296
+s.
