@@ -11,7 +11,7 @@ response.menu = [
     (T('Meus Eventos'), False, URL('evento','default', 'meus_eventos'), []),
     (T('Criar Evento'), False, URL('evento','default', 'cadastro_evento'), []),
     (T('Meus Perfil'), False, URL(), [
-    	(T('Usuario'), False, URL('evento','user', 'profile'), []),
+        (T('Usuario'), False, URL('evento','default', 'user',args=['profile']), []),
    		(T('Cliete'), False, URL('evento','default', 'cliente'), []),
    		(T('Organizacao'), False, URL('evento','default', 'organizacao'), [])
     	]),
